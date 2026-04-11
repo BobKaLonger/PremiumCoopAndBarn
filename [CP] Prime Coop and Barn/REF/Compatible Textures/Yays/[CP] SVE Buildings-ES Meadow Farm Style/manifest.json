@@ -1,0 +1,21 @@
+{
+	"Name": "[CP] SVE Buildings-ES Meadow Farm Style",
+	"Author": "Gurrabird",
+	"Version": "1.0.0",
+	"Description": "Retextures SVE Premium Coop, Premium Barn and Winery in the style of the East Scarp Meadow Farm house.",
+	"UniqueID": "Gurrabird.CP.SVEFarmBuildingsESMeadow",
+	"UpdateKeys": [],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher"
+	},
+	"Dependencies": [
+		{
+			"UniqueID": "FlashShifter.StardewValleyExpandedCP",
+			"IsRequired": true
+		},
+		{
+			"UniqueID": "Lemurkat.EastScarp",
+			"IsRequired": false
+		},
+	]
+}

@@ -1,0 +1,110 @@
+{
+    "Changes": [
+        {
+            "LogName": "add craftable Data",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_ManureMachine": {
+                    "Name": "{{ModId}}_ManureMachine",
+                    "DisplayName": "{{i18n:Luxury-machine.name}}",
+                    "Description": "{{i18n:Luxury-machine.description}}",
+                    "Price": 2000,
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": false,
+                    "Texture": "birdb_ManureMachine",
+                    "SpriteIndex": 0
+                        }
+
+    }
+  },
+{
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "Entries": {
+        "(BC){{ModId}}_ManureMachine": {
+            "OutputRules": [
+          {
+            "Id": "Default",
+            "Triggers": [
+              {
+                "Id": "OutputCollected, MachinePutDown",
+                "Trigger": "OutputCollected, MachinePutDown",
+                "RequiredItemId": null,
+                "RequiredTags": null,
+                "RequiredCount": 1,
+                "Condition": null
+              }
+            ],
+            "UseFirstValidOutput": false,
+            "OutputItem": [
+              {
+                "CustomData": null,
+                "OutputMethod": null,
+                "CopyColor": false,
+                "CopyPrice": false,
+                "CopyQuality": false,
+                "PreserveType": null,
+                "PreserveId": null,
+                "IncrementMachineParentSheetIndex": 0,
+                "PriceModifiers": null,
+                "PriceModifierMode": "Stack",
+                "Condition": null,
+                "Id": "(O)369",
+                "ItemId": "(O)369",
+                "RandomItemId": null,
+                "MaxItems": null,
+                "MinStack": 1,
+                "MaxStack": 8,
+                "Quality": -1,
+                "ObjectInternalName": null,
+                "ObjectDisplayName": null,
+                "ObjectColor": null,
+                "ToolUpgradeLevel": -1,
+                "IsRecipe": false,
+                "StackModifiers": null,
+                "StackModifierMode": "Stack",
+                "QualityModifiers": null,
+                "QualityModifierMode": "Stack",
+                "ModData": null,
+                "PerItemCondition": null
+              }
+            ],
+            "MinutesUntilReady": -1,
+            "DaysUntilReady": 1,
+            "InvalidCountMessage": null,
+            "RecalculateOnCollect": false
+          }
+    ],
+    "AdditionalConsumedItems": null,
+    "PreventTimePass": null,
+    "ReadyTimeModifiers": null,
+    "ReadyTimeModifierMode": "Stack",
+    "InvalidItemMessage": null,
+    "InvalidItemMessageCondition": null,
+    "InvalidCountMessage": null,
+    "LoadEffects": null,
+    "WorkingEffects": null,
+    "WorkingEffectChance": 0.33,
+    "AllowLoadWhenFull": false,
+    "WobbleWhileWorking": false,
+    "LightWhileWorking": null,
+    "ShowNextIndexWhileWorking": false,
+    "ShowNextIndexWhenReady": true,
+    "AllowFairyDust": false,
+    "IsIncubator": false,
+    "OnlyCompleteOvernight": false,
+    "ClearContentsOvernightCondition": null,
+    "StatsToIncrementWhenLoaded": null,
+    "StatsToIncrementWhenHarvested": null,
+    "ExperienceGainOnHarvest": null,
+    "CustomFields": null
+          }
+        
+      }
+    }
+    ]
+}
+    

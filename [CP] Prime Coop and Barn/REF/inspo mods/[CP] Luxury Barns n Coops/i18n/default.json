@@ -1,0 +1,9 @@
+{
+ "Luxury-coop.name":"Luxury Coop",
+ "Luxury-coop.description": "Houses 16 coop-dwelling animals. Comes with  auto-needs and manure collecting systems.",
+ "Luxury-barn.name":"Luxury Barn",
+ "Luxury-barn.description": "Houses 16 barn-dwelling animals. Comes with  auto-needs and manure collecting systems.",
+ "Luxury-machine.name":"Manure Machine",
+"Luxury-machine.description":"A machine for processing manure.",
+"OstrichInCoop.warning":"Requires construction of a Luxury Coop."
+}

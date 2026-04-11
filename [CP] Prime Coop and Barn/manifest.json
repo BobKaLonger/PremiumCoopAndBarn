@@ -1,0 +1,25 @@
+{
+	"Name": "Prime Coop and Barn",
+	"Author": "bobkalonger",
+	"Version": "1.0.0",
+	"Description": "Adds just the Premium Coop and Barn from SVE as a content pack. Bears, Camels, and Geese not included!",
+	"UniqueID": "bobkalonger.primecoopnbarnCP",
+	"MinimumApiVersion": "4.4.0",
+	"UpdateKeys": [ "Nexus:-1" ],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher",
+		"MinimumVersion": "2.9.0"
+	},
+	"Dependencies": [
+		{
+			"UniqueID": "Pathoschild.ContentPatcher",
+			"MinimumVersion": "2.9.0",
+			"IsRequired": true
+		},
+		{
+			"UniqueID": "bobkalonger.PCB_code",
+			"MinimumVersion": "1.0.0",
+			"IsRequired": true
+		}
+	]
+}

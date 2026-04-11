@@ -1,0 +1,12 @@
+{
+"Name": "Bogs Witchy SVE Farm Buildings",
+"Author": "BogWyytch",
+"Version": "1.0",
+"Description": "a boggified retexture of the new SVE buildings",
+"UniqueID": "BogWyytch.SVEFarmBuildings",
+"ContentPackFor": 
+    { 
+        "UniqueID": "Pathoschild.ContentPatcher",
+        "MinimumVersion": "2.0"
+    }
+}

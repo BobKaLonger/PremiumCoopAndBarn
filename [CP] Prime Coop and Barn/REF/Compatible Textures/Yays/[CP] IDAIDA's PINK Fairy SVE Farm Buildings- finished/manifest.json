@@ -1,0 +1,10 @@
+{
+    "Name": "IDAIDAs Pink Fairy SVE Farm Buildings",
+    "Author": "IDAIDAart",
+    "Version": "1.1.0",
+    "Description": "changes SVE farm buildingsto match Idaidas Fairy Buildings.",
+    "UniqueID": "idaida.FairyPSVE",
+    "ContentPackFor": {
+         "UniqueID": "Pathoschild.ContentPatcher",
+     },
+}

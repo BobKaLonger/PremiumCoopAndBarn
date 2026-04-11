@@ -1,0 +1,41 @@
+{
+	"Format": "2.9.0",
+	"Changes": [
+		{
+			"LogName": "Replace Premium Barn Texture",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_PremiumBarn",
+			"FromFile": "assets/PremiumBarn.png",
+		},
+		{
+			"LogName": "Replace Premium Coop Texture",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_PremiumCoop",
+			"FromFile": "assets/PremiumCoop.png",
+		},
+		{
+			"LogName": "Replace Winery Texture",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_Winery",
+			"FromFile": "assets/Winery.png",
+		},
+		{
+			"LogName": "Replace Premium Barn Paint Mask",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_PremiumBarn_PaintMask",
+			"FromFile": "assets/PremiumBarn_PaintMask.png",
+		},
+		{
+			"LogName": "Replace Premium Coop Paint Mask",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_PremiumCoop_PaintMask",
+			"FromFile": "assets/PremiumCoop_PaintMask.png",
+		},
+		{
+			"LogName": "Replace Winery Paint Mask",
+			"Action": "EditImage",
+			"Target": "Buildings/SVE_Winery_PaintMask",
+			"FromFile": "assets/Winery_PaintMask.png",
+		},				
+	]
+}

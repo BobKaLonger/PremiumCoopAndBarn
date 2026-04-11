@@ -1,0 +1,12 @@
+{
+	"Name": "Jeelh's Farm Buildings",
+	"Author": "Jeelh",
+	"Version": "1.1.3",
+	"Description": "Gives buildings a fresh look! Many styles and materials to choose from",
+	"UniqueID": "jeelh.FarmBuildings",
+	"MinimumApiVersion": "3.0.0",
+	"UpdateKeys": [ "Nexus:37726" ],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher"
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "Name": "Luxury Barns n Coops",
+    "Author": "birdb (omena007)",
+    "Version": "1.2",
+    "Description": "Adds bigger more luxorious versions of barn and coop.",
+    "UniqueID": "birdb.CP.LuxuryBuild",
+    "UpdateKeys": [ "Nexus:44204" ],
+    "MinimumApiVersion": "4.0",
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher",
+        "MinimumVersion": "2.0.1"
+    }
+}

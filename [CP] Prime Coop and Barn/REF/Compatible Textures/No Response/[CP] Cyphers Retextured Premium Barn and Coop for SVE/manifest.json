@@ -1,0 +1,18 @@
+{
+    "Name": "Cyphers Premium Barn and Coop for SVE [CP]",
+    "Author": "Genomecypher",
+    "Version": "1.2.0",
+    "Description": "Content Patcher version of my retexture the Premium barn and coop in Stardew Valley Expanded",
+    "UniqueID": "Genomecypher.SVEPremiumBarnandCoopRetextureCP",
+    "UpdateKeys": ["Nexus:41511"],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher",
+	"MinimumVersion": "2.9.0"
+    },
+    "Dependencies": [
+   {
+      "UniqueID": "FlashShifter.StardewValleyExpandedCP",
+      "IsRequired": true
+   }
+    ]
+}

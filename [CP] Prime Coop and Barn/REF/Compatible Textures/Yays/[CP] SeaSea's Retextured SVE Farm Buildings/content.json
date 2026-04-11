@@ -1,0 +1,131 @@
+{
+    "Format": "2.3.0",
+    "ConfigSchema": {
+     "Premium Barn":{
+             "AllowValues": "Off, Default, Darker, Brown Roof White Wood, White Roof Brown Wood, White, Starblue",
+             "Default": "Default"
+         },
+    "Premium Coop":{
+             "AllowValues": "Off, Default, Darker, Brown, White, Starblue",
+             "Default": "Default"
+         },
+    "Winery":{
+            "AllowValues": "Off, Default, Brown, White, Starblue",
+            "Default": "Default"
+        }
+     },
+     "Changes": [
+ 
+//PREMIUM BARN
+{
+         "LogName": "Premium Barn Default",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumBarn",
+         "FromFile": "assets/PremiumBarn.png",
+         "When": {"Premium Barn": "Default"}
+         },
+ {
+         "LogName": "Premium Barn Darker",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumBarn",
+         "FromFile": "assets/PremiumBarnB.png",
+         "When": {"Premium Barn": "Darker"}
+         },
+
+ {
+         "LogName": "Premium Barn Brown Roof White Wood",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumBarn",
+         "FromFile": "assets/PremiumBarnW.png",
+         "When": {"Premium Barn": "Brown Roof White Wood"}
+         },
+ {
+         "LogName": "Premium Barn White Roof Brown Wood",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumBarn",
+         "FromFile": "assets/PremiumBarnW2.png",
+         "When": {"Premium Barn": "White Roof Brown Wood"}
+         },
+ {
+         "LogName": "Premium Barn White",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumBarn",
+         "FromFile": "assets/PremiumBarnW3.png",
+         "When": {"Premium Barn": "White"}
+         },
+ {
+            "LogName": "Premium Barn Starblue",
+            "Action": "EditImage",
+            "Target": "Buildings/SVE_PremiumBarn",
+            "FromFile": "assets/PremiumBarnSB.png",
+            "When": {"Premium Barn": "Starblue"}
+            },
+
+//PREMIUM COOP
+    {
+         "LogName": "Premium Coop Retexture Default",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumCoop",
+          "FromFile": "assets/PremiumCoop1.png",
+         "When": {"Premium Coop": "Default"}
+        },
+    {
+        "LogName": "Premium Coop Retexture Darker",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumCoop",
+         "FromFile": "assets/PremiumCoop2.png",
+         "When": {"Premium Coop": "Darker"}
+           },
+        {
+        "LogName": "Premium Coop Retexture Brown",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumCoop",
+         "FromFile": "assets/PremiumCoopB.png",
+         "When": {"Premium Coop": "Brown"}
+           },
+    {
+        "LogName": "Premium Coop Retexture White",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_PremiumCoop",
+         "FromFile": "assets/PremiumCoopW.png",
+         "When": {"Premium Coop": "White"}
+           },
+           {
+            "LogName": "Premium Coop Retexture Starblue",
+             "Action": "EditImage",
+             "Target": "Buildings/SVE_PremiumCoop",
+             "FromFile": "assets/PremiumCoopSB.png",
+             "When": {"Premium Coop": "Starblue"}
+               },
+
+//WINERY
+    {
+         "LogName": "Winery Retexture Default",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_Winery",
+         "FromFile": "assets/Winery.png",
+        "When": {"Winery": "Default"}
+        },
+            {
+         "LogName": "Winery Retexture Brown",
+         "Action": "EditImage",
+         "Target": "Buildings/SVE_Winery",
+         "FromFile": "assets/WineryB.png",
+        "When": {"Winery": "Brown"}
+        },
+        {
+            "LogName": "Winery Retexture White",
+            "Action": "EditImage",
+            "Target": "Buildings/SVE_Winery",
+            "FromFile": "assets/WineryW.png",
+           "When": {"Winery": "White"}
+           },
+        {
+            "LogName": "Winery Retexture Starblue",
+            "Action": "EditImage",
+            "Target": "Buildings/SVE_Winery",
+            "FromFile": "assets/WinerySB.png",
+           "When": {"Winery": "Starblue"}
+           }
+ ]
+ }
