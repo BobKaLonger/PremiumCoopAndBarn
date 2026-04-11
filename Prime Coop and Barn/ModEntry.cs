@@ -10,6 +10,11 @@ using StardewValley.GameData.Buildings;
 
 namespace PrimeCoopAndBarn
 {
+    public interface IContentPatcherAPI
+    {
+        bool IsConditionsApiReady { get; }
+        void RegisterToken(IManifest mod, string name, Func<IEnumerable<string>> getValue);
+    }
     public class ModEntry : Mod
     {
         public static ModEntry modInstance;
