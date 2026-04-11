@@ -1,6 +1,8 @@
 using StardewValley;
 using System;
 using System.Collections.Generic;
+using StardewModdingAPI;
+using StardewModdingAPI.Events;
 using Microsoft.Xna.Framework;
 using StardewValley.Buildings;
 using StardewValley.Objects;
@@ -18,7 +20,7 @@ namespace PrimeCoopAndBarn
 
             I18n.Init(helper.Translation);
 
-            var mi = Helper.ModRegistry.Get("bobkalonger.PrimeCoopAndBarnCP");
+            var mi = Helper.ModRegistry.Get("bobkalonger.primecoopnbarnCP");
             cpPack = mi.GetType().GetProperty("ContentPack")?.GetValue(mi) as IContentPack;
         }
     }
