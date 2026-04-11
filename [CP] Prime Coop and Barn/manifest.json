@@ -17,7 +17,7 @@
 			"IsRequired": true
 		},
 		{
-			"UniqueID": "bobkalonger.PCB_code",
+			"UniqueID": "bobkalonger.PrimeCB_code",
 			"MinimumVersion": "1.0.0",
 			"IsRequired": true
 		}
