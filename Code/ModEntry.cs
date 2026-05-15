@@ -8,7 +8,7 @@ using StardewValley.Buildings;
 using StardewValley.Objects;
 using StardewValley.GameData.Buildings;
 
-namespace PrimeCoopAndBarn
+namespace PremiumCoopAndBarn
 {
     public interface IContentPatcherAPI
     {
@@ -25,7 +25,7 @@ namespace PrimeCoopAndBarn
 
             I18n.Init(helper.Translation);
 
-            var mi = Helper.ModRegistry.Get("bobkalonger.primecoopnbarnCP");
+            var mi = Helper.ModRegistry.Get("bobkalonger.PremiumcoopnbarnCP");
             cpPack = mi.GetType().GetProperty("ContentPack")?.GetValue(mi) as IContentPack;
         }
     }

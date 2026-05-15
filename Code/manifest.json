@@ -1,10 +1,10 @@
 {
-    "Name": "Prime Coop and Barn",
+    "Name": "Premium Coop and Barn",
     "Author": "bobkalonger",
     "Version": "1.0.0",
-    "Description": "Code for Prime Coop and Barn",
-    "UniqueID": "bobkalonger.PrimeCB_code",
-    "EntryDll": "PrimeCoopAndBarn.dll",
+    "Description": "Code for Premium Coop and Barn",
+    "UniqueID": "bobkalonger.PremiumCB_code",
+    "EntryDll": "PremiumCoopAndBarn.dll",
     "MinimumApiVersion": "4.4.0",
     "UpdateKeys": [ "Nexus:-1" ],
     "Dependencies": [

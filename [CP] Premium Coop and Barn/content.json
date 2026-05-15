@@ -23,41 +23,41 @@
 	"Changes": [
 		{
 			"Action": "Load",
-			"Target": "Maps/prime_Clean_PrimeBarn",
-			"FromFile": "assets/clean_PrimeBarn.tmx"
+			"Target": "Maps/Premium_Clean_PremiumBarn",
+			"FromFile": "assets/clean_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/prime_Clean_PrimeCoop",
-			"FromFile": "assets/clean_PrimeCoop.tmx"
+			"Target": "Maps/Premium_Clean_PremiumCoop",
+			"FromFile": "assets/clean_PremiumCoop.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/prime_Cozy_PrimeBarn",
-			"FromFile": "assets/cozy_PrimeBarn.tmx"
+			"Target": "Maps/Premium_Cozy_PremiumBarn",
+			"FromFile": "assets/cozy_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/prime_Clean_PrimeCoop",
-			"FromFile": "assets/cozy_PrimeCoop.tmx"
+			"Target": "Maps/Premium_Clean_PremiumCoop",
+			"FromFile": "assets/cozy_PremiumCoop.tmx"
 		},
 		{
 			"Action": "EditData",
 			"Target": "Data/PaintData",
 			"Entries": {
-				"{{ModId}}_PrimeBarn": "Building/-10 0/Roof/-10 5/Trim/-5 0"
+				"{{ModId}}_PremiumBarn": "Building/-10 0/Roof/-10 5/Trim/-5 0"
 			}
 		},
 		{
 			"Action": "EditData",
 			"Target": "Data/PaintData",
 			"Entries": {
-				"{{ModId}}_PrimeCoop": "Building/-12 0/Roof/-10 5/Trim/-10 5"
+				"{{ModId}}_PremiumCoop": "Building/-12 0/Roof/-10 5/Trim/-10 5"
 		    }
 	    },
         {
             "Action": "Include",
-            "FromFile": "data/PrimeExposed.json",
+            "FromFile": "data/PremiumExposed.json",
             "When":
             {
                 "Machines": "Exposed"
@@ -65,7 +65,7 @@
         },
         {
             "Action": "Include",
-            "FromFile": "data/PrimeHidden.json",
+            "FromFile": "data/PremiumHidden.json",
             "When":
             {
                 "Machines": "Hidden"
@@ -73,7 +73,7 @@
         },
         {
             "Action": "Include",
-            "FromFile": "data/PrimeNone.json",
+            "FromFile": "data/PremiumNone.json",
             "When":
             {
                 "Machines": "None"

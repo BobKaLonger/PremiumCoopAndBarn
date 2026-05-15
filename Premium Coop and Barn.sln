@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{314C6247-30EA-3492-19B6-DF847E3B326F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremiumCoopAndBarn", "Code\PremiumCoopAndBarn.csproj", "{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C078F68E-8BDB-F14D-1DA1-D0A3C4C777C9} = {314C6247-30EA-3492-19B6-DF847E3B326F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF86275C-3060-419E-B237-1F55665E9F19}
+	EndGlobalSection
+EndGlobal
