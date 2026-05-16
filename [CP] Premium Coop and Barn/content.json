@@ -1,25 +1,25 @@
 {
 	"Format": "2.9.0",
 	"ConfigSchema": {
-        "Barn Floor": {
-            "AllowValues": "Clean, Cozy",
-            "Description": "Choose the interior for your barn.",
-            "Default": "Clean",
-            "Section": "Indoor Appearance"
-        },
-        "Coop Floor": {
-            "AllowValues": "Clean, Cozy",
-            "Description": "Choose the interior for your coop.",
-            "Default": "Clean",
-            "Section": "Indoor Appearance"
-        },
-        "Indoor Style": {
+		"Barn Floor": {
+			"AllowValues": "Clean, Cozy",
+			"Description": "Choose the interior for your barn.",
+			"Default": "Clean",
+			"Section": "Indoor Appearance"
+		},
+		"Coop Floor": {
+			"AllowValues": "Clean, Cozy",
+			"Description": "Choose the interior for your coop.",
+			"Default": "Clean",
+			"Section": "Indoor Appearance"
+		},
+		"Indoor Style": {
 			"AllowValues": "Classic SVE, Custom",
 			"Description": "Choose either classic SVE interiors or custom interiors.",
 			"Default": "Classic SVE",
 			"Section": "Indoor Appearance"
-        }
-    },
+		}
+	},
 	"Changes": [
 		{
 			"Action": "Load",
@@ -43,23 +43,43 @@
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Clean_PremiumBarn",
-			"FromFile": "assets/clean_PremiumBarn.tmx"
+			"Target": "Maps/SVE_Clean_PremiumBarn",
+			"FromFile": "assets/SVE_clean_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Clean_PremiumCoop",
-			"FromFile": "assets/clean_PremiumCoop.tmx"
+			"Target": "Maps/SVE_Clean_PremiumCoop",
+			"FromFile": "assets/SVE_clean_PremiumCoop.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Cozy_PremiumBarn",
-			"FromFile": "assets/cozy_PremiumBarn.tmx"
+			"Target": "Maps/SVE_Cozy_PremiumBarn",
+			"FromFile": "assets/SVE_cozy_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Clean_PremiumCoop",
-			"FromFile": "assets/cozy_PremiumCoop.tmx"
+			"Target": "Maps/SVE_Clean_PremiumCoop",
+			"FromFile": "assets/SVE_cozy_PremiumCoop.tmx"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Custom_Clean_PremiumBarn",
+			"FromFile": "assets/Custom_clean_PremiumBarn.tmx"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Custom_Clean_PremiumCoop",
+			"FromFile": "assets/Custom_clean_PremiumCoop.tmx"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Custom_Cozy_PremiumBarn",
+			"FromFile": "assets/Custom_cozy_PremiumBarn.tmx"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Custom_Clean_PremiumCoop",
+			"FromFile": "assets/Custom_cozy_PremiumCoop.tmx"
 		},
 		{
 			"Action": "EditData",
@@ -73,23 +93,21 @@
 			"Target": "Data/PaintData",
 			"Entries": {
 				"{{ModId}}_PremiumCoop": "Building/-12 0/Roof/-10 5/Trim/-10 5"
-		    }
-	    },
-        {
-            "Action": "Include",
-            "FromFile": "data/indoorClassic.json",
-            "When":
-            {
-                "Indoor Style": "Classic SVE"
-            }
-        },
-        {
-            "Action": "Include",
-            "FromFile": "data/indoorCustom.json",
-            "When":
-            {
-                "Indoor Style": "Custom"
 			}
-        }
-    ]
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/indoorClassic.json",
+			"When": {
+				"Indoor Style": "Classic SVE"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/indoorCustom.json",
+			"When": {
+				"Indoor Style": "Custom"
+			}
+		}
+	]
 }

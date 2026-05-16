@@ -9,11 +9,9 @@
     "config.coop-floor.description": "Choose the interior for your coop.",
     "config.coop-floor.values.clean": "Clean",
     "config.coop-floor.values.cozy": "Cozy",
-    "config.premium-building-upgrade.name": "Premium Building Upgrade",
-    "config.premium-building-upgrade.description": "Choose which buildings to upgrade. For SVE or Vanilla, select Auto.",
-    "config.premium-building-upgrade.values.auto": "Auto",
-    "config.premium-building-upgrade.values.giga": "Giga",
-    "config.premium-building-upgrade.values.mega": "Mega",
-    "config.section.indoor-appearance.name": "Indoor Appearance",
-    "config.section.upgrade-path.name": "Upgrade Path"
+    "config.indoor-style.name": "Indoor Style",
+    "config.indoor-style.description": "Choose either classic SVE interiors or custom interiors",
+    "config.indoor-style.values.classic-sve": "Classic SVE",
+    "config.indoor-style.values.custom": "Custom",
+    "config.section.indoor-appearance.name": "Indoor Appearance"
 }

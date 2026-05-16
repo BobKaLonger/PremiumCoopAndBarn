@@ -119,7 +119,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "SVE_Clean_PremiumBarn",
+                    "IndoorMap": "Custom_Clean_PremiumBarn",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
@@ -288,7 +288,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "SVE_Clean_PremiumCoop",
+                    "IndoorMap": "Custom_Clean_PremiumCoop",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
@@ -463,7 +463,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "SVE_Cozy_PremiumBarn",
+                    "IndoorMap": "Custom_Cozy_PremiumBarn",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
@@ -632,7 +632,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "SVE_Cozy_PremiumCoop",
+                    "IndoorMap": "Custom_Cozy_PremiumCoop",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
