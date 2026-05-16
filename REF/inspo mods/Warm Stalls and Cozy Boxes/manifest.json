@@ -1,0 +1,19 @@
+{
+    "Name": "Warm Stalls and Cozy Boxes",
+    "Author": "lindest",
+    "Version": "1.1.1",
+    "Description": "Adds stalls to barns, sleeping boxes to coops, and recolors hay.",
+    "UniqueID": "lindest.stallsboxes",
+    "UpdateKeys": [ "Nexus:43227" ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher" },
+    "Dependencies": [
+      { "UniqueID": "mushymato.MMAP", "IsRequired": true },
+      { "UniqueID": "Spiderbuttons.CMCT", "IsRequired": true },
+      { "UniqueID": "Spiderbuttons.BETAS", "IsRequired": true },
+      { "UniqueID": "Gweniaczek.Medieval_Craftables", "IsRequired": false },
+      { "UniqueID": "GZhynko.AnimalsNeedWater", "IsRequired": false },
+      { "UniqueID": "jenf1.megacoopbarn", "IsRequired": false },
+      { "UniqueID": "Amichwan.More.upgrades", "IsRequired": false },
+    ],
+}

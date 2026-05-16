@@ -1,0 +1,321 @@
+{
+  "Changes": [
+    /*Gigantic Coop and Barn*/
+    /*Gigantic Coop*/
+    {
+      "LogName": "Giga Coop Clean",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cleanCoop5",
+      "FromFile": "assets/Maps/Coop40.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 33 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 40 2 24 Buildings 41 2 24 Buildings 42 2 24 Buildings 43 2 24 Buildings 44 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 18 4 25 Back 19 4 25 Back 33 4 25 Back 34 4 25 Back 35 4 25 Back 40 5 25 Back 41 5 25 Back 42 5 25 Back 43 5 25 Back 44 5 25",
+        "Feed": null,
+        "Light": "41 6 4 43 6 4 41 9 4 43 9 4 41 12 4 43 12 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 33 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 40 2 26 Buildings 41 2 26 Buildings 42 2 26 Buildings 43 2 26 Buildings 44 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 18 4 12 Back 19 4 12 Back 33 4 12 Back 34 4 12 Back 35 4 12 Back 40 5 12 Back 41 5 12 Back 42 5 12 Back 43 5 12 Back 44 5 12",
+        "ProduceArea": "4 4 33 9",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 15 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 18 1 2 19 1 2 33 1 2 34 1 2 35 1 2 40 2 2 41 2 2 42 2 2 43 2 2 44 2 2 2 4 6 3 4 6 4 4 6 18 4 6 19 4 6 33 4 6 34 4 6 35 4 6 40 5 6 41 5 6 42 5 6 43 5 6 44 5 6 2 13 6 7 7 4 7 11 4 16 7 4 16 11 4 21 7 4 21 11 4 29 7 4 29 11 4"
+      },
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Giga Coop Clean",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cleanCoop5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 13
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 29 3\" \"Spiderbuttons.BETAS_ClearObjects Here All 8 12 27 12\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Giga Coop Cozy",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cozyCoop5",
+      "FromFile": "assets/Maps/Coop40.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 33 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 40 2 24 Buildings 41 2 24 Buildings 42 2 24 Buildings 43 2 24 Buildings 44 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 18 4 25 Back 19 4 25 Back 33 4 25 Back 34 4 25 Back 35 4 25 Back 40 5 25 Back 41 5 25 Back 42 5 25 Back 43 5 25 Back 44 5 25",
+        "Feed": null,
+        "Light": "41 6 4 43 6 4 41 9 4 43 9 4 41 12 4 43 12 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 33 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 40 2 26 Buildings 41 2 26 Buildings 42 2 26 Buildings 43 2 26 Buildings 44 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 18 4 12 Back 19 4 12 Back 33 4 12 Back 34 4 12 Back 35 4 12 Back 40 5 12 Back 41 5 12 Back 42 5 12 Back 43 5 12 Back 44 5 12",
+        "ProduceArea": "4 4 33 9",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 15 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 18 1 2 19 1 2 33 1 2 34 1 2 35 1 2 40 2 2 41 2 2 42 2 2 43 2 2 44 2 2 2 4 6 3 4 6 4 4 6 18 4 6 19 4 6 33 4 6 34 4 6 35 4 6 40 5 6 41 5 6 42 5 6 43 5 6 44 5 6 2 13 6 7 7 4 7 11 4 16 7 4 16 11 4 21 7 4 21 11 4 29 7 4 29 11 4"
+      },
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Giga Coop Cozy",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cozyCoop5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 13
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 8 3 27 3\" \"Spiderbuttons.BETAS_ClearObjects Here All 8 12 27 12\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Giga Coop Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true"
+      },
+      "TargetField": [
+        "bobkalonger.gigacoopnbarn_GigaCoop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop40_1",
+            "Source": {
+              "X": 6,
+              "Y": 9
+            },
+            "Destination": {
+              "X": 6,
+              "Y": 10
+            },
+            "Size": {
+              "X": 12,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Coop40_2",
+            "Source": {
+              "X": 17,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 17,
+              "Y": 4
+            },
+            "Size": {
+              "X": 5,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Coop40_3",
+            "Source": {
+              "X": 23,
+              "Y": 6
+            },
+            "Destination": {
+              "X": 37,
+              "Y": 6
+            },
+            "Size": {
+              "X": 2,
+              "Y": 2
+            }
+          },
+          {
+            "Id": "Default_Shift_Coop40_4",
+            "Source": {
+              "X": 25,
+              "Y": 4
+            },
+            "Destination": {
+              "X": 39,
+              "Y": 4
+            },
+            "Size": {
+              "X": 5,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          },
+        ],
+        "IndoorItems": [
+          {
+            "Id": "Extra_Incubator2",
+            "ItemId": "(BC)101",
+            "Tile": {
+              "X": 5,
+              "Y": 3
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    },
+	/*Gigantic Barn*/
+	{
+      "LogName": "Giga Barn Clean",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cleanBarn5",
+      "FromFile": "assets/Maps/Barn40.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Buildings 40 1 24 Buildings 41 1 24 Buildings 43 1 24 Buildings 44 1 24 Buildings 46 1 24 Buildings 47 1 24 Buildings 49 1 24 Buildings 50 1 24 Buildings 52 1 24 Buildings 53 1 24 Buildings 55 1 24 Buildings 56 1 24 Buildings 58 1 24 Buildings 59 1 24 Buildings 61 1 24 Buildings 62 1 24 Buildings 64 1 24 Buildings 65 1 24 Buildings 67 1 24 Buildings 68 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 46 Back 26 4 46 Back 28 4 46 Back 29 4 46 Back 31 4 46 Back 32 4 46 Back 34 4 46 Back 35 4 46 Back 37 4 46 Back 38 4 46 Back 40 4 46 Back 41 4 46 Back 43 4 46 Back 44 4 46 Back 46 4 46 Back 47 4 46 Back 49 4 25 Back 50 4 25 Back 52 4 25 Back 53 4 25 Back 55 4 25 Back 56 4 25 Back 58 4 25 Back 59 4 25 Back 61 4 25 Back 62 4 25 Back 64 4 25 Back 65 4 25 Back 67 4 25 Back 68 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4 17 24 4 21 24 4 25 24 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Buildings 40 1 26 Buildings 41 1 26 Buildings 43 1 26 Buildings 44 1 26 Buildings 46 1 26 Buildings 47 1 26 Buildings 49 1 26 Buildings 50 1 26 Buildings 52 1 26 Buildings 53 1 26 Buildings 55 1 26 Buildings 56 1 26 Buildings 58 1 26 Buildings 59 1 26 Buildings 61 1 26 Buildings 62 1 26 Buildings 64 1 26 Buildings 65 1 26 Buildings 67 1 26 Buildings 68 1 24 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 53 Back 26 4 53 Back 28 4 53 Back 29 4 53 Back 31 4 53 Back 32 4 53 Back 34 4 53 Back 35 4 53 Back 37 4 53 Back 38 4 53 Back 40 4 53 Back 41 4 53 Back 43 4 53 Back 44 4 53 Back 46 4 53 Back 47 4 53 Back 49 4 12 Back 50 4 54 Back 52 4 12 Back 53 4 12 Back 55 4 54 Back 56 4 12 Back 58 4 12 Back 59 4 12 Back 61 4 12 Back 62 4 12 Back 64 4 12 Back 65 4 54 Back 67 4 12 Back 68 4 12",
+        "ProduceArea": "9 4 35 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 40 4 6 41 4 6 43 4 6 44 4 6 46 4 6 47 4 6 49 4 6 50 4 6 52 4 6 53 4 6 55 4 6 56 4 6 58 4 6 59 4 6 61 4 6 62 4 6 64 4 6 65 4 6 67 4 6 68 4 6 10 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 40 1 2 41 1 2 43 1 2 44 1 2 46 1 2 47 1 2 49 1 2 50 1 2 50 1 2 52 1 2 53 1 2 55 1 2 56 1 2 58 1 2 59 1 2 61 1 2 62 1 2 64 1 2 65 1 2 67 1 2 68 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 51 7 4 58 7 4 62 7 4 69 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4 51 12 4 58 12 4 62 12 4 69 12 4 36 18 4 40 18 4 47 18 4 51 18 4 58 18 4 62 18 4 69 18 4 36 23 4 40 23 4 47 23 4 51 23 4 58 23 4 62 23 4 69 23 4",
+      },
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Giga Barn Clean",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cleanBarn5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 10 12 29 12\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Giga Barn Cozy",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cozyBarn5",
+      "FromFile": "assets/Maps/Barn40.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Buildings 40 1 24 Buildings 41 1 24 Buildings 43 1 24 Buildings 44 1 24 Buildings 46 1 24 Buildings 47 1 24 Buildings 49 1 24 Buildings 50 1 24 Buildings 52 1 24 Buildings 53 1 24 Buildings 55 1 24 Buildings 56 1 24 Buildings 58 1 24 Buildings 59 1 24 Buildings 61 1 24 Buildings 62 1 24 Buildings 64 1 24 Buildings 65 1 24 Buildings 67 1 24 Buildings 68 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 46 Back 26 4 46 Back 28 4 46 Back 29 4 46 Back 31 4 46 Back 32 4 46 Back 34 4 46 Back 35 4 46 Back 37 4 46 Back 38 4 46 Back 40 4 46 Back 41 4 46 Back 43 4 46 Back 44 4 46 Back 46 4 46 Back 47 4 46 Back 49 4 25 Back 50 4 25 Back 52 4 25 Back 53 4 25 Back 55 4 25 Back 56 4 25 Back 58 4 25 Back 59 4 25 Back 61 4 25 Back 62 4 25 Back 64 4 25 Back 65 4 25 Back 67 4 25 Back 68 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4 17 24 4 21 24 4 25 24 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Buildings 40 1 26 Buildings 41 1 26 Buildings 43 1 26 Buildings 44 1 26 Buildings 46 1 26 Buildings 47 1 26 Buildings 49 1 26 Buildings 50 1 26 Buildings 52 1 26 Buildings 53 1 26 Buildings 55 1 26 Buildings 56 1 26 Buildings 58 1 26 Buildings 59 1 26 Buildings 61 1 26 Buildings 62 1 26 Buildings 64 1 26 Buildings 65 1 26 Buildings 67 1 26 Buildings 68 1 24 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 53 Back 26 4 53 Back 28 4 53 Back 29 4 53 Back 31 4 53 Back 32 4 53 Back 34 4 53 Back 35 4 53 Back 37 4 53 Back 38 4 53 Back 40 4 53 Back 41 4 53 Back 43 4 53 Back 44 4 53 Back 46 4 53 Back 47 4 53 Back 49 4 12 Back 50 4 54 Back 52 4 12 Back 53 4 12 Back 55 4 54 Back 56 4 12 Back 58 4 12 Back 59 4 12 Back 61 4 12 Back 62 4 12 Back 64 4 12 Back 65 4 54 Back 67 4 12 Back 68 4 12",
+        "ProduceArea": "9 4 35 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 40 4 6 41 4 6 43 4 6 44 4 6 46 4 6 47 4 6 49 4 6 50 4 6 52 4 6 53 4 6 55 4 6 56 4 6 58 4 6 59 4 6 61 4 6 62 4 6 64 4 6 65 4 6 67 4 6 68 4 6 10 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 40 1 2 41 1 2 43 1 2 44 1 2 46 1 2 47 1 2 49 1 2 50 1 2 50 1 2 52 1 2 53 1 2 55 1 2 56 1 2 58 1 2 59 1 2 61 1 2 62 1 2 64 1 2 65 1 2 67 1 2 68 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 51 7 4 58 7 4 62 7 4 69 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4 51 12 4 58 12 4 62 12 4 69 12 4 36 18 4 40 18 4 47 18 4 51 18 4 58 18 4 62 18 4 69 18 4 36 23 4 40 23 4 47 23 4 51 23 4 58 23 4 62 23 4 69 23 4"
+      },
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Giga Barn Cozy",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/bobkalonger.gigacoopnbarn_cozyBarn5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 10 12 29 12\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Giga Barn Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=bobkalonger.gigacoopnbarn": true,
+        "Barns": "true"
+      },
+      "TargetField": [
+        "bobkalonger.gigacoopnbarn_GigaBarn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn40_1",
+            "Source": {
+              "X": 26,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 26,
+              "Y": 4
+            },
+            "Size": {
+              "X": 28,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    }
+  ]
+}

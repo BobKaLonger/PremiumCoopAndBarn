@@ -1,0 +1,20 @@
+{
+  "config.RecolorOverwrite.name": "色の変更",
+  "config.RecolorOverwrite.description": "ご自身の用途に最も合うMODアセットの色合いを選択してください。空欄にすると、選択肢の中から自動で検出されます。",
+  "config.WallColor.name": "壁の色",
+  "config.WallColor.description": "様々な壁の色の中から選ぶことができます。",
+  "config.Coops.name": "鳥小屋",
+  "config.Coops.description": "鳥小屋への変更を有効にします。注意：鳥小屋の中にいる状態で切り替えないこと。建設やアップグレード前に切り替えると最もスムーズです。",
+  "config.Barns.name": "家畜小屋",
+  "config.Barns.description": "家畜小屋への変更を有効にします。注意：鳥小屋の中にいる状態で切り替えないこと。建設やアップグレード前に切り替えると最もスムーズです。",
+  "config.ExpandedCoops.name": "特化職オーバーホール用の鳥小屋",
+  "config.ExpandedCoops.description": "Walk of Life (Rebirth)やVanilla Plus ProfessionsなどのMODを使用している場合に、大型の鳥小屋を有効にします。追加の動物スロットをアンロックした際にONにしてください。",
+  "config.ExpandedBarns.name": "特化職オーバーホール用の家畜小屋",
+  "config.ExpandedBarns.description": "Walk of Life (Rebirth)やVanilla Plus ProfessionsなどのMODを使用している場合に、大型の家畜小屋を有効にします。追加の動物スロットをアンロックした際にONにしてください。",
+  "config.ShaneScene.name": "シェーンのハート8イベントシーン",
+  "config.ShaneScene.description": "シェーンのハート8イベントのマップの見た目を変更します。イベント内容は変更されません。「Worn」を選択するとバニラに近い雰囲気に、「Fresh」を選択するときれいな建物の見た目になります。",
+  "config.HayRecolor.name": "干し草の色変更",
+  "config.HayRecolor.description": "建物内の干し草の色を統一します。MedievalMatchを選択すると、干し草の色がGwenによるMODの季節ごとの色に合わせられます（Medieval Craftablesが必要）。",
+  "config.ClearHay.name": "干し草ブラスター9000",
+  "config.ClearHay.description": "スタックしているオブジェクトを削除します。鳥小屋または家畜小屋に入ると作動します。作動対象はバニラのベンチ型エサ台の位置です。動物たちには安全です。爆発音が聞こえているなら、この機能がオンになっています！"
+}

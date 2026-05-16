@@ -1,0 +1,2334 @@
+{
+  "Format": "2.9.0",
+  "ConfigSchema": {
+    "RecolorOverwrite": {
+      "AllowValues": "Earthy, RusticCountry, Starblue, Vanilla, VPR",
+      "AllowBlank": true,
+      "Default": ""
+    },
+    "WallColor": {
+      "AllowValues": "Beige, Black, Blue, BogGreen, BogPurple, Cream, DarkChocolate, DarkPink, DoveGray, Gold, Gray, Green, Lavender, Mauve, Orange, PaleBlue, PastelPink, Purple, Red, RustRed, SpringGreen, Teal, White, WineRed",
+      "AllowBlank": true,
+      "Default": ""
+    },
+    "Coops": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "Barns": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "ExpandedCoops": {
+      "AllowValues": "true, false",
+      "Default": "false"
+    },
+    "ExpandedBarns": {
+      "AllowValues": "true, false",
+      "Default": "false"
+    },
+	"ShaneScene": {
+      "AllowValues": "Fresh, Worn",
+	  "AllowBlank": true,
+      "Default": "Worn"
+    },
+    "HayRecolor": {
+      "AllowValues": "Recolored, MedievalMatch",
+      "AllowBlank": true,
+      "Default": "Recolored"
+    },
+    "ClearHay": {
+      "AllowValues": "true, false",
+      "Default": "false"
+    },
+  },
+  "DynamicTokens": [
+    /*checking which recolor is used*/
+    {
+      "Name": "Recolor",
+      "Value": "Vanilla"
+    },
+    {
+      "Name": "Recolor",
+      "Value": "Earthy",
+      "When": {
+        "HasMod": "DaisyNiko.EarthyInteriors"
+      }
+    },
+    {
+      "Name": "Recolor",
+      "Value": "Starblue",
+      "When": {
+        "HasMod": "Lita.StarblueValleyUnofficial"
+      }
+    },
+    {
+      "Name": "Recolor",
+      "Value": "VPR",
+      "When": {
+        "HasMod": "grapeponta.VibrantPastoralRecolor"
+      }
+    },
+    {
+      "Name": "Recolor",
+      "Value": "RusticCountry",
+      "When": {
+        "HasMod": "Hesper.RusticCountrysideTownInterior"
+      }
+    },
+    /*recolor overwrite*/
+    {
+      "Name": "Recolor",
+      "Value": "{{RecolorOverwrite}}",
+      "When": {
+        "RecolorOverwrite |contains=Vanilla, Earthy, Starblue, VPR": true
+      }
+    }
+  ],
+  "Changes": [
+    /*new tiles*/
+    {
+      "LogName": "Load StallBoxes Asset",
+      "Action": "Load",
+      "Target": "Maps/z_stallsboxes",
+      "Priority": "Low",
+      "FromFile": "Assets/Tilesheets/z_stallsboxes_Vanilla.png"
+    },
+    {
+      "LogName": "Load waterTroughTilesheet Asset",
+      "Action": "Load",
+      "Target": "Maps/z_waterTroughTilesheet",
+      "Priority": "Low",
+      "FromFile": "Assets/Tilesheets/ANW/Vanilla/z_waterTroughTilesheet.png"
+    },
+    {
+      "LogName": "Load wateringSystemTilesheet Asset",
+      "Action": "Load",
+      "Target": "Maps/z_wateringSystemTilesheet",
+      "Priority": "Low",
+      "FromFile": "Assets/Tilesheets/ANW/Vanilla/z_wateringSystemTilesheet.png"
+    },
+    /*Coop 1 maps*/
+    {
+      "LogName": "Coop 1 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12",
+        "ProduceArea": "4 4 8 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 2 4 6 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 1 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 10 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Coop 1 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12",
+        "ProduceArea": "4 4 8 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 2 4 6 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 1 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 10 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Coop 1 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +20",
+      "Target": "Maps/Coop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12",
+        "ProduceArea": "4 4 8 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 2 4 6 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 1 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +20",
+      "Target": "Maps/Coop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 10 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true",
+        "ClearHay": "true"
+      }
+    },
+    /*Coop 2 maps*/
+    {
+      "LogName": "Coop 2 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 14 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 12 4 25 Back 13 4 25 Back 14 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 12 1 24 Buildings 13 1 26 Buildings 14 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 12 4 12 Back 13 4 12 Back 14 4 12",
+        "ProduceArea": "4 4 11 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 12 1 2 13 1 2 14 1 2 2 4 6 3 4 6 4 4 6 12 4 6 13 4 6 14 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 2 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop2",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 15 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 2 Modded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Coops": "true"
+      },
+      "TargetField": [
+        "Big Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_ClearSpot_EggIncubator",
+            "Source": {
+              "X": 2,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 2,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)101"
+          },
+          {
+            "Id": "Default_Shift_Coop2_1",
+            "Source": {
+              "X": 10,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 10,
+              "Y": 9
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 2 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 14 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 12 4 25 Back 13 4 25 Back 14 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 12 1 24 Buildings 13 1 26 Buildings 14 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 12 4 12 Back 13 4 12 Back 14 4 12",
+        "ProduceArea": "4 4 11 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 12 1 2 13 1 2 14 1 2 2 4 6 3 4 6 4 4 6 12 4 6 13 4 6 14 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 2 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop2",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 15 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 2 Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      },
+      "TargetField": [
+        "Big Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_ClearSpot_EggIncubator",
+            "Source": {
+              "X": 2,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 2,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)101"
+          },
+          {
+            "Id": "Default_Shift_Coop2_1",
+            "Source": {
+              "X": 10,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 10,
+              "Y": 9
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 2 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +20",
+      "Target": "Maps/Coop2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 15 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 13 4 25 Back 14 4 25 Back 15 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 15 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 13 4 12 Back 14 4 12 Back 15 4 54",
+        "ProduceArea": "4 4 12 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 1 2 3 1 2 4 1 2 13 1 2 14 1 2 15 1 2 2 4 6 3 4 6 4 4 6 13 4 6 14 4 6 15 4 6 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 2 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop2",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 15 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 2 VPP Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +20",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      },
+      "TargetField": [
+        "Big Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_ClearSpot_EggIncubator",
+            "Source": {
+              "X": 2,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 2,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)101"
+          },
+          {
+            "Id": "Default_Shift_Coop2_1",
+            "Source": {
+              "X": 10,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 10,
+              "Y": 9
+            },
+            "Size": {
+              "X": 5,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    /*Coop 3 maps*/
+    {
+      "LogName": "Coop 3 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 14 4 25 Back 15 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 14 4 12 Back 15 4 54 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 14 4 6 15 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 14 1 2 15 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions, DaLion.Professions": false,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 3 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 17 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions, DaLion.Professions": false,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 3 Modded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions, DaLion.Professions": false,
+        "Coops": "true"
+      },
+      "TargetField": [
+        "Deluxe Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop3_1",
+            "Source": {
+              "X": 14,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 14,
+              "Y": 9
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 3 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 14 4 25 Back 15 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 14 4 12 Back 15 4 54 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 14 4 6 15 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 14 1 2 15 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 3 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 20 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 3 VPP Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      },
+      "TargetField": [
+        "Deluxe Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop3_1",
+            "Source": {
+              "X": 14,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 14,
+              "Y": 9
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 3 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +20",
+      "Target": "Maps/Coop3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 3 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Coop3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 20 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 3 VPP Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +20",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      },
+      "TargetField": [
+        "Deluxe Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop3_1",
+            "Source": {
+              "X": 14,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 14,
+              "Y": 9
+            },
+            "Size": {
+              "X": 7,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 3 Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Coop3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 14 4 25 Back 15 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 14 4 12 Back 15 4 54 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 14 4 6 15 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 14 1 2 15 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 3 Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Coop3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 5 3 18 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 3 Walk of Life Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Late +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      },
+      "TargetField": [
+        "Deluxe Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop3_1",
+            "Source": {
+              "X": 14,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 14,
+              "Y": 9
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 3 Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Coop3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}Walk.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 15 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 15 4 54 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 11 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 15 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 15 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 9 6"
+      },
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 3 Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Coop3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 5 3 18 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 3 Walk of Life Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Late +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      },
+      "TargetField": [
+        "Deluxe Coop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Coop3_1",
+            "Source": {
+              "X": 14,
+              "Y": 8
+            },
+            "Destination": {
+              "X": 14,
+              "Y": 9
+            },
+            "Size": {
+              "X": 6,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    /*Barn 1 maps*/
+    {
+      "LogName": "Barn 1 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 12 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 17 1 24 Buildings 18 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 11 4 46 Back 12 4 46 Back 14 4 25 Back 15 4 25 Back 17 4 25 Back 18 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 12 Back 15 4 12 Back 17 4 12 Back 18 4 12",
+        "ProduceArea": "9 4 4 9",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 15 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 12 1 2 14 1 2 15 1 2 17 1 2 18 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 12 4 6 14 4 6 15 4 6 17 4 6 18 4 6 3 10 4 7 10 4 15 10 4 19 10 4 10 13 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Barns": "true"
+      }
+    },
+    {
+      "LogName": "Barn 1 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 12 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 17 1 24 Buildings 18 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 11 4 46 Back 12 4 46 Back 14 4 25 Back 15 4 25 Back 17 4 25 Back 18 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 12 Back 15 4 12 Back 17 4 12 Back 18 4 12",
+        "ProduceArea": "9 4 4 9",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 15 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 12 1 2 14 1 2 15 1 2 17 1 2 18 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 12 4 6 14 4 6 15 4 6 17 4 6 18 4 6 3 10 4 7 10 4 15 10 4 19 10 4 10 13 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      }
+    },
+    {
+      "LogName": "Barn 1 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 23 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 12 Back 15 4 12 Back 17 4 12 Back 18 4 12 Back 20 4 12 Back 21 4 12 Back 22 4 12 Back 23 4 12",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 23 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 12 Back 15 4 12 Back 17 4 12 Back 18 4 12 Back 20 4 12 Back 21 4 12 Back 22 4 12 Back 23 4 12",
+        "ProduceArea": "9 4 13 9",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 15 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 12 1 2 14 1 2 15 1 2 17 1 2 18 1 2 20 1 2 21 1 2 22 1 2 23 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 12 4 6 14 4 6 15 4 6 17 4 6 18 4 6 20 4 6 21 4 6 22 4 6 23 4 6 3 10 4 7 10 4 14 10 4 18 10 4 25 10 4 10 13 6"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      }
+    },
+    /*Barn 2 maps*/
+    {
+      "LogName": "Barn 2 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 12 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 17 1 24 Buildings 18 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 11 4 46 Back 12 4 46 Back 14 4 46 Back 15 4 46 Back 17 4 25 Back 18 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 53 Back 15 4 53 Back 17 4 12 Back 18 4 12",
+        "ProduceArea": "9 4 4 12",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 12 1 2 14 1 2 15 1 2 17 1 2 18 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 12 4 6 14 4 6 15 4 6 17 4 6 18 4 6 10 16 6 3 7 4 7 7 4 15 7 4 19 7 4 3 13 4 7 16 4 15 13 4 19 13 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Barns": "true"
+      }
+    },
+    {
+      "LogName": "Move Barn 2 Modded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": false,
+        "Barns": "true"
+      },
+      "TargetField": [
+        "Big Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn2_1",
+            "Source": {
+              "X": 13,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 13,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Barn2_2",
+            "Source": {
+              "X": 18,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 18,
+              "Y": 4
+            },
+            "Size": {
+              "X": 2,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 2 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 12 1 24 Buildings 14 1 24 Buildings 15 1 24 Buildings 17 1 24 Buildings 18 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 11 4 46 Back 12 4 46 Back 14 4 46 Back 15 4 46 Back 17 4 25 Back 18 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 12 1 26 Buildings 14 1 26 Buildings 15 1 26 Buildings 17 1 26 Buildings 18 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 11 4 53 Back 12 4 53 Back 14 4 53 Back 15 4 53 Back 17 4 12 Back 18 4 12",
+        "ProduceArea": "9 4 4 12",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 12 1 2 14 1 2 15 1 2 17 1 2 18 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 12 4 6 14 4 6 15 4 6 17 4 6 18 4 6 10 16 6 3 7 4 7 7 4 15 7 4 19 7 4 3 13 4 7 16 4 15 13 4 19 13 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      }
+    },
+    {
+      "LogName": "Move Barn 2 VPP Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      },
+      "TargetField": [
+        "Big Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn2_1",
+            "Source": {
+              "X": 13,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 13,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Barn2_2",
+            "Source": {
+              "X": 18,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 18,
+              "Y": 4
+            },
+            "Size": {
+              "X": 2,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 2 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn2",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 21 1 24 Buildings 22 1 24 Buildings 24 1 24 Buildings 25 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 12 4 46 Back 13 4 46 Back 15 4 46 Back 16 4 46 Back 18 4 46 Back 19 4 25 Back 21 4 25 Back 22 4 25 Back 24 4 25 Back 25 4 25",
+        "Feed": null,
+        "Light": null,
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 12 1 26 Buildings 13 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 24 1 26 Buildings 25 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 12 4 53 Back 13 4 53 Back 15 4 53 Back 16 4 53 Back 18 4 53 Back 19 4 12 Back 21 4 12 Back 22 4 12 Back 24 4 12 Back 25 4 12",
+        "ProduceArea": "9 4 13 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 12 1 2 13 1 2 15 1 2 16 1 2 18 1 2 19 1 2 21 1 2 22 1 2 24 1 2 25 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 12 4 6 13 4 6 15 4 6 16 4 6 18 4 6 19 4 6 21 4 6 22 4 6 24 4 6 25 4 6 10 16 6 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 3 13 4 7 13 4 14 13 4 18 13 4 25 13 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      }
+    },
+    {
+      "LogName": "Move Barn 2 VPP Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      },
+      "TargetField": [
+        "Big Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn2_1",
+            "Source": {
+              "X": 18,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 18,
+              "Y": 4
+            },
+            "Size": {
+              "X": 5,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    /*Barn 3 maps*/
+    {
+      "LogName": "Barn 3 Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 21 1 24 Buildings 22 1 24 Buildings 24 1 24 Buildings 25 1 24 Buildings 27 1 24 Buildings 28 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 12 4 46 Back 13 4 46 Back 15 4 46 Back 16 4 46 Back 18 4 46 Back 19 4 46 Back 21 4 25 Back 22 4 25 Back 24 4 25 Back 25 4 25 Back 27 4 25 Back 28 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 12 1 26 Buildings 13 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 24 1 26 Buildings 25 1 26 Buildings 27 1 26 Buildings 28 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 12 4 53 Back 13 4 53 Back 15 4 53 Back 16 4 53 Back 18 4 53 Back 19 4 53 Back 21 4 12 Back 22 4 12 Back 24 4 12 Back 25 4 12 Back 27 4 12 Back 28 4 12",
+        "ProduceArea": "9 4 13 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 12 1 2 13 1 2 15 1 2 16 1 2 18 1 2 19 1 2 21 1 2 22 1 2 24 1 2 25 1 2 27 1 2 28 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 12 4 6 13 4 6 15 4 6 16 4 6 18 4 6 19 4 6 21 4 6 22 4 6 24 4 6 25 4 6 27 4 6 28 4 6 10 16 6 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 3 13 4 7 13 4 14 13 4 18 13 4 25 13 4 29 13 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions, DaLion.Professions": false,
+        "Barns": "true"
+      }
+    },
+	{
+      "LogName": "Move Barn 3 Modded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions, DaLion.Professions": false,
+        "Barns": "true"
+      },
+      "TargetField": [
+        "Deluxe Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn3_1",
+            "Source": {
+              "X": 12,
+              "Y": 5
+            },
+            "Destination": {
+              "X": 11,
+              "Y": 5
+            },
+            "Size": {
+              "X": 1,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 3 VPP Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 21 1 24 Buildings 22 1 24 Buildings 24 1 24 Buildings 25 1 24 Buildings 27 1 24 Buildings 28 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 12 4 46 Back 13 4 46 Back 15 4 46 Back 16 4 46 Back 18 4 46 Back 19 4 46 Back 21 4 25 Back 22 4 25 Back 24 4 25 Back 25 4 25 Back 27 4 25 Back 28 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 12 1 26 Buildings 13 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 24 1 26 Buildings 25 1 26 Buildings 27 1 26 Buildings 28 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 12 4 53 Back 13 4 53 Back 15 4 53 Back 16 4 53 Back 18 4 53 Back 19 4 53 Back 21 4 12 Back 22 4 12 Back 24 4 12 Back 25 4 12 Back 27 4 12 Back 28 4 12",
+        "ProduceArea": "9 4 13 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 12 1 2 13 1 2 15 1 2 16 1 2 18 1 2 19 1 2 21 1 2 22 1 2 24 1 2 25 1 2 27 1 2 28 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 12 4 6 13 4 6 15 4 6 16 4 6 18 4 6 19 4 6 21 4 6 22 4 6 24 4 6 25 4 6 27 4 6 28 4 6 10 16 6 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 3 13 4 7 13 4 14 13 4 18 13 4 25 13 4 29 13 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      }
+    },
+	{
+      "LogName": "Move Barn 3 VPP Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      },
+      "TargetField": [
+        "Deluxe Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn3_1",
+            "Source": {
+              "X": 12,
+              "Y": 5
+            },
+            "Destination": {
+              "X": 11,
+              "Y": 5
+            },
+            "Size": {
+              "X": 1,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 3 VPP Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}VPP.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 12 Back 26 4 12 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12 Back 37 4 12 Back 38 4 12",
+        "ProduceArea": "9 4 24 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 10 16 6 32 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4"
+      },
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      }
+    },
+	{
+      "LogName": "Move Barn 3 VPP Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=KediDili.VanillaPlusProfessions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      },
+      "TargetField": [
+        "Deluxe Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn3_1",
+            "Source": {
+              "X": 12,
+              "Y": 5
+            },
+            "Destination": {
+              "X": 11,
+              "Y": 5
+            },
+            "Size": {
+              "X": 1,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          },
+		  {
+            "Id": "Default_Shift_Barn3_2",
+            "Source": {
+              "X": 23,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 23,
+              "Y": 4
+            },
+            "Size": {
+              "X": 3,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 3 Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Barn3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 12 1 24 Buildings 13 1 24 Buildings 15 1 24 Buildings 16 1 24 Buildings 18 1 24 Buildings 19 1 24 Buildings 21 1 24 Buildings 22 1 24 Buildings 24 1 24 Buildings 25 1 24 Buildings 27 1 24 Buildings 28 1 24 Back 3 4 25 Back 4 4 25 Back 6 4 25 Back 7 4 25 Back 9 4 46 Back 10 4 46 Back 12 4 46 Back 13 4 46 Back 15 4 46 Back 16 4 46 Back 18 4 46 Back 19 4 46 Back 21 4 25 Back 22 4 25 Back 24 4 25 Back 25 4 25 Back 27 4 25 Back 28 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 12 1 26 Buildings 13 1 26 Buildings 15 1 26 Buildings 16 1 26 Buildings 18 1 26 Buildings 19 1 26 Buildings 21 1 26 Buildings 22 1 26 Buildings 24 1 26 Buildings 25 1 26 Buildings 27 1 26 Buildings 28 1 26 Back 3 4 12 Back 4 4 12 Back 6 4 12 Back 7 4 12 Back 9 4 53 Back 10 4 53 Back 12 4 53 Back 13 4 53 Back 15 4 53 Back 16 4 53 Back 18 4 53 Back 19 4 53 Back 21 4 12 Back 22 4 12 Back 24 4 12 Back 25 4 12 Back 27 4 12 Back 28 4 12",
+        "ProduceArea": "9 4 13 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 12 1 2 13 1 2 15 1 2 16 1 2 18 1 2 19 1 2 21 1 2 22 1 2 24 1 2 25 1 2 27 1 2 28 1 2 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 12 4 6 13 4 6 15 4 6 16 4 6 18 4 6 19 4 6 21 4 6 22 4 6 24 4 6 25 4 6 27 4 6 28 4 6 10 16 6 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 3 13 4 7 13 4 14 13 4 18 13 4 25 13 4 29 13 4"
+      },
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      }
+    },
+	{
+      "LogName": "Move Barn 3 Walk of Life Not Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      },
+      "TargetField": [
+        "Deluxe Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn3_1",
+            "Source": {
+              "X": 12,
+              "Y": 5
+            },
+            "Destination": {
+              "X": 11,
+              "Y": 5
+            },
+            "Size": {
+              "X": 1,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 3 Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/Barn3",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}Walk.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 4 1 24  Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 25 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26  Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 12 Back 25 4 12 Back 26 4 12 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12",
+        "ProduceArea": "9 4 24 12",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 14 11",
+        "WindowLight": "4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 20 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 10 16 6 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 3 13 4 7 13 4 14 13 4 18 13 4 25 13 4 29 13 4 36 13 4"
+      },
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Barn 3 Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Barn3",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 7 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Barn 3 Walk of Life Expanded Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      },
+      "TargetField": [
+        "Deluxe Barn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+		  {
+            "Id": "Default_Shift_Barn3_1",
+            "Source": {
+              "X": 12,
+              "Y": 5
+            },
+            "Destination": {
+              "X": 11,
+              "Y": 5
+            },
+            "Size": {
+              "X": 1,
+              "Y": 10
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Barn3_2",
+            "Source": {
+              "X": 26,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 26,
+              "Y": 4
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    /*SVE*/
+    /*Premium Coop*/
+    {
+      "LogName": "Premium Coop Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 2 24 Buildings 4 2 24 Buildings 11 2 24 Buildings 12 2 24 Buildings 13 2 24 Buildings 14 2 24 Buildings 21 2 24 Buildings 22 2 24 Buildings 28 4 24 Buildings 29 4 24 Buildings 30 4 24 Back 3 5 25 Back 4 5 25 Back 11 5 25 Back 12 5 25 Back 13 5 25 Back 14 5 25 Back 21 5 25 Back 22 5 25 Back 28 7 25 Back 29 7 25 Back 30 7 25",
+        "Feed": null,
+        "Light": "29 7 4 29 10 4",
+        "NightTiles": "Buildings 3 2 26 Buildings 4 2 26 Buildings 11 2 26 Buildings 12 2 26 Buildings 13 2 26 Buildings 14 2 26 Buildings 21 2 26 Buildings 22 2 26 Buildings 28 4 26 Buildings 29 4 26 Buildings 30 4 26 Back 3 5 12 Back 4 5 12 Back 11 5 12 Back 12 5 54 Back 13 5 12 Back 14 5 12 Back 21 5 12 Back 22 5 12 Back 28 7 12 Back 29 7 54 Back 30 7 12",
+        "ProduceArea": "4 5 19 5",
+        "ViewportFollowPlayer": "T",
+        "Warp": "29 13 Farm 1 1",
+        "WindowLight": "3 2 2 4 2 2 11 2 2 12 2 2 13 2 2 14 2 2 21 2 2 22 2 2 28 4 2 29 4 2 30 4 2 3 5 6 4 5 6 11 5 6 12 5 6 13 5 6 14 5 6 21 5 6 22 5 6 28 7 6 29 7 6 30 7 6 29 11 6"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": false,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Coop Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 11
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 5 4 20 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": false,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Premium Coop Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 2 24 Buildings 4 2 24 Buildings 11 2 24 Buildings 12 2 24 Buildings 13 2 24 Buildings 14 2 24 Buildings 21 2 24 Buildings 22 2 24 Buildings 28 4 24 Buildings 29 4 24 Buildings 30 4 24 Back 3 5 25 Back 4 5 25 Back 11 5 25 Back 12 5 25 Back 13 5 25 Back 14 5 25 Back 21 5 25 Back 22 5 25 Back 28 7 25 Back 29 7 25 Back 30 7 25",
+        "Feed": null,
+        "Light": "29 7 4 29 10 4",
+        "NightTiles": "Buildings 3 2 26 Buildings 4 2 26 Buildings 11 2 26 Buildings 12 2 26 Buildings 13 2 26 Buildings 14 2 26 Buildings 21 2 26 Buildings 22 2 26 Buildings 28 4 26 Buildings 29 4 26 Buildings 30 4 26 Back 3 5 12 Back 4 5 12 Back 11 5 12 Back 12 5 54 Back 13 5 12 Back 14 5 12 Back 21 5 12 Back 22 5 12 Back 28 7 12 Back 29 7 54 Back 30 7 12",
+        "ProduceArea": "4 5 19 5",
+        "ViewportFollowPlayer": "T",
+        "Warp": "29 13 Farm 1 1",
+        "WindowLight": "3 2 2 4 2 2 11 2 2 12 2 2 13 2 2 14 2 2 21 2 2 22 2 2 28 4 2 29 4 2 30 4 2 3 5 6 4 5 6 11 5 6 12 5 6 13 5 6 14 5 6 21 5 6 22 5 6 28 7 6 29 7 6 30 7 6 29 11 6"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Coop Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 11
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 5 4 20 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Premium Coop Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}Walk.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 3 2 24 Buildings 4 2 24 Buildings 12 2 24 Buildings 13 2 24 Buildings 14 2 24 Buildings 21 2 24 Buildings 22 2 24 Buildings 28 4 24 Buildings 29 4 24 Buildings 30 4 24 Back 3 5 25 Back 4 5 25 Back 12 5 25 Back 13 5 25 Back 14 5 25 Back 21 5 25 Back 22 5 25 Back 28 7 25 Back 29 7 25 Back 30 7 25",
+        "Feed": null,
+        "Light": "29 7 4 29 10 4",
+        "NightTiles": "Buildings 3 2 26 Buildings 4 2 26 Buildings 12 2 26 Buildings 13 2 26 Buildings 14 2 26 Buildings 21 2 26 Buildings 22 2 26 Buildings 28 4 26 Buildings 29 4 26 Buildings 30 4 26 Back 3 5 12 Back 4 5 12 Back 12 5 54 Back 13 5 12 Back 14 5 12 Back 21 5 12 Back 22 5 12 Back 28 7 12 Back 29 7 54 Back 30 7 12",
+        "ProduceArea": "4 5 19 5",
+        "ViewportFollowPlayer": "T",
+        "Warp": "29 13 Farm 1 1",
+        "WindowLight": "3 2 2 4 2 2 12 2 2 13 2 2 14 2 2 21 2 2 22 2 2 28 4 2 29 4 2 30 4 2 3 5 6 4 5 6 12 5 6 13 5 6 14 5 6 21 5 6 22 5 6 28 7 6 29 7 6 30 7 6 29 11 6"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Coop Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumCoop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 11
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 5 4 20 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Coops": "true",
+        "ExpandedCoops": "true",
+        "ClearHay": "true"
+      }
+    },
+    /*move Premium Coop Machines*/
+    {
+      "LogName": "Move Premium Coop Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "Coops": "true"
+      },
+      "TargetField": [
+        "FlashShifter.StardewValleyExpandedCP_PremiumCoop"
+      ],
+      "Entries": {
+        "IndoorItems": [
+          {
+            "Id": "Default_FeedHopper",
+            "ItemId": "(BC)99",
+            "Tile": {
+              "X": 4,
+              "Y": 4
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Incubator",
+            "ItemId": "(BC)101",
+            "Tile": {
+              "X": 3,
+              "Y": 4
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Heater",
+            "ItemId": "(BC)104",
+            "Tile": {
+              "X": 21,
+              "Y": 4
+            },
+            "Indestructible": false
+          },
+          {
+            "Id": "Default_AutoPetter",
+            "ItemId": "(BC)272",
+            "Tile": {
+              "X": 22,
+              "Y": 4
+            },
+            "Indestructible": false
+          },
+          {
+            "Id": "Default_AutoGrabber",
+            "ItemId": "(BC)165",
+            "Tile": {
+              "X": 26,
+              "Y": 6
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    },
+    /*Premium Barn*/
+    {
+      "LogName": "Premium Barn Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 12 Back 26 4 12 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12 Back 37 4 12 Back 38 4 12",
+        "ProduceArea": "9 4 24 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1 32 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 10 16 6 32 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": false,
+        "Barns": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Barn Modded",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 4 21 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": false,
+        "Barns": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Premium Barn Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 12 Back 26 4 12 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12 Back 37 4 12 Back 38 4 12",
+        "ProduceArea": "9 4 24 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1 32 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 10 16 6 32 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Barn Walk of Life Not Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 4 21 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "false",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Premium Barn Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}Walk.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Buildings 40 1 24 Buildings 41 1 24 Buildings 43 1 24 Buildings 44 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 46 Back 26 4 46 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25 Back 40 4 25 Back 41 4 25 Back 43 4 25 Back 44 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Buildings 40 1 26 Buildings 41 1 26 Buildings 43 1 26 Buildings 44 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 53 Back 26 4 53 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12 Back 37 4 12 Back 38 4 12 Back 40 4 54 Back 41 4 12 Back 43 4 12 Back 44 4 12",
+        "ProduceArea": "9 4 35 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1 32 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 40 4 6 10 41 4 6 43 4 6 44 4 6 16 6 32 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 40 1 2 41 1 2 3 41 1 2 43 1 2 44 1 2 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Premium Barn Walk of Life Expanded",
+      "Action": "EditMap",
+      "Priority": "Late +10",
+      "Target": "Maps/SVE_PremiumBarn",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 4 4 21 4\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod |contains=DaLion.Professions": true,
+        "Barns": "true",
+        "ExpandedBarns": "true",
+        "ClearHay": "true"
+      }
+    },
+    /*move Premium Barn Machines*/
+    {
+      "LogName": "Move Premium Barn Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "Barns": "true"
+      },
+      "TargetField": [
+        "FlashShifter.StardewValleyExpandedCP_PremiumBarn"
+      ],
+      "Entries": {
+        "IndoorItems": [
+          {
+            "Id": "Default_FeedHopper",
+            "ItemId": "(BC)99",
+            "Tile": {
+              "X": 6,
+              "Y": 3
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Heater",
+            "ItemId": "(BC)104",
+            "Tile": {
+              "X": 5,
+              "Y": 3
+            },
+            "Indestructible": false
+          },
+          {
+            "Id": "Default_AutoPetter",
+            "ItemId": "(BC)272",
+            "Tile": {
+              "X": 4,
+              "Y": 3
+            },
+            "Indestructible": false
+          },
+          {
+            "Id": "Default_AutoGrabber",
+            "ItemId": "(BC)165",
+            "Tile": {
+              "X": 19,
+              "Y": 20
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    },
+	/*Includes Extra Maps*/
+	{
+      "LogName": "Includes Extra Maps",
+      "Action": "Include",
+      "FromFile": "Data/AmichwanMoreUpgrades.json, Data/bobkalongerGiganticCoopandBarn.json, Data/JenMegaCoopandBarn.json, Data/juanpa98arUpgradeableBarnsandCoops.json, Data/ShaneScene.json, Data/UncleAryaResourceChicken.json"
+	},
+    /*recolor mod tiles*/
+    {
+      "LogName": "Recolor StallsBoxes",
+      "Action": "EditImage",
+      "Priority": "Default",
+      "PatchMode": "Overlay",
+      "Target": "Maps/z_stallsboxes",
+      "FromFile": "Assets/Tilesheets/z_stallsboxes_{{Recolor}}.png"
+    },
+    {
+      "LogName": "Recolor Walls",
+      "Action": "EditImage",
+      "Priority": "Late",
+      "PatchMode": "Overlay",
+      "Target": "Maps/coopTiles",
+      "FromFile": "Assets/Tilesheets/WallColor/coopTiles_wall_{{WallColor}}.png"
+    },
+    {
+      "LogName": "Recolor ANW Trough Dirty",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Replace",
+      "Target": "Maps/z_waterTroughTilesheet",
+      "FromFile": "Assets/Tilesheets/ANW/{{Recolor}}/z_waterTroughTilesheet.png",
+      "When": {
+        "HasMod |contains=GZhynko.AnimalsNeedWater": true,
+        "Query: '{{Spiderbuttons.CMCT/Config: GZhynko.AnimalsNeedWater, CleanerTroughs}}' = 'false'": "true"
+      }
+    },
+    {
+      "LogName": "Recolor ANW Trough Clean",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Replace",
+      "Target": "Maps/z_waterTroughTilesheet",
+      "FromFile": "Assets/Tilesheets/ANW/{{Recolor}}/z_waterTroughTilesheet_clean.png",
+      "When": {
+        "HasMod |contains=GZhynko.AnimalsNeedWater": true,
+        "Query: '{{Spiderbuttons.CMCT/Config: GZhynko.AnimalsNeedWater, CleanerTroughs}}' = 'true'": "true"
+      }
+    },
+    {
+      "LogName": "Recolor ANW Watering System",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Replace",
+      "Target": "Maps/z_wateringSystemTilesheet",
+      "FromFile": "Assets/Tilesheets/ANW/{{Recolor}}/z_wateringSystemTilesheet.png",
+      "When": {
+        "HasMod |contains=GZhynko.AnimalsNeedWater": true
+      }
+    },
+    /*recolor hay*/
+    {
+      "LogName": "Recolor Feed Hay",
+      "Action": "EditImage",
+      "Priority": "Default",
+      "PatchMode": "Replace",
+      "Target": "Maps/springobjects",
+      "FromFile": "Assets/Tilesheets/z_haystalls_{{Recolor}}.png",
+      "FromArea": {
+        "X": 16,
+        "Y": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      "ToArea": {
+        "X": 160,
+        "Y": 112,
+        "Width": 16,
+        "Height": 16
+      },
+      "When": {
+        "HayRecolor": "Recolored"
+      }
+    },
+    /*recolor mod Haybale*/
+    {
+      "LogName": "Recolor Stalls Haybale",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Replace",
+      "Target": "Maps/z_stallsboxes",
+      "FromFile": "Assets/Tilesheets/z_haystalls_{{Recolor}}.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 32,
+        "Y": 128,
+        "Width": 16,
+        "Height": 32
+      }
+    },
+    /*Medieval Match Haybale*/
+    {
+      "LogName": "Medieval Match Haybale",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Overlay",
+      "Target": "Maps/z_stallsboxes",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 64,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 32,
+        "Y": 128,
+        "Width": 16,
+        "Height": 32
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*recolor Ornamental Haybale*/
+    {
+      "LogName": "Recolor Ornamental Haybale",
+      "Action": "EditImage",
+      "Priority": "Default",
+      "PatchMode": "Replace",
+      "Target": "TileSheets/Craftables",
+      "FromFile": "Assets/Tilesheets/z_haystalls_{{Recolor}}.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 80,
+        "Y": 160,
+        "Width": 16,
+        "Height": 32
+      },
+      "When": {
+        "HayRecolor": "Recolored"
+      }
+    },
+    /*Medieval Match Ornamental Haybale*/
+    {
+      "LogName": "Medieval Match Ornamental Haybale",
+      "Action": "EditImage",
+      "Priority": "Default",
+      "PatchMode": "Overlay",
+      "Target": "TileSheets/Craftables",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 64,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 80,
+        "Y": 160,
+        "Width": 16,
+        "Height": 32
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "Query: '{{Spiderbuttons.CMCT/Config: Gweniaczek.Medieval_Craftables, DecorationsNotReplaced |contains=Ornamental Hay Bale}}' = 'false'": "false",
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*Medieval Match Box*/
+    {
+      "LogName": "Medieval Match Box",
+      "Action": "EditImage",
+      "Priority": "Default +10",
+      "PatchMode": "Overlay",
+      "Target": "Maps/z_stallsboxes",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 16,
+        "Y": 96,
+        "Width": 16,
+        "Height": 32
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*Medieval Match Floor Hay 1*/
+    {
+      "LogName": "Medieval Match Floor Hay 1",
+      "Action": "EditImage",
+      "Priority": "Late",
+      "PatchMode": "Overlay",
+      "Target": "Maps/coopTiles",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 16,
+        "Y": 0,
+        "Width": 48,
+        "Height": 48
+      },
+      "ToArea": {
+        "X": 16,
+        "Y": 48,
+        "Width": 48,
+        "Height": 48
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*Medieval Match Floor Hay 2*/
+    {
+      "LogName": "Medieval Match Floor Hay 2",
+      "Action": "EditImage",
+      "Priority": "Late",
+      "PatchMode": "Overlay",
+      "Target": "Maps/coopTiles",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      "ToArea": {
+        "X": 32,
+        "Y": 256,
+        "Width": 16,
+        "Height": 16
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*Medieval Match Hay Hopper*/
+    {
+      "LogName": "Medieval Match Hay Hopper",
+      "Action": "EditImage",
+      "Priority": "Late",
+      "PatchMode": "Overlay",
+      "Target": "TileSheets/Craftables",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 64,
+        "Y": 0,
+        "Width": 16,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 64,
+        "Y": 384,
+        "Width": 16,
+        "Height": 32
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "Query: '{{Spiderbuttons.CMCT/Config: Gweniaczek.Medieval_Craftables, NotReplaced |contains=Hay Hopper}}' = 'false'": "false",
+        "HayRecolor": "MedievalMatch"
+      }
+    },
+    /*Medieval Match Incubator*/
+    {
+      "LogName": "Medieval Match Incubator",
+      "Action": "EditImage",
+      "Priority": "Late",
+      "PatchMode": "Overlay",
+      "Target": "TileSheets/Craftables",
+      "FromFile": "Assets/Tilesheets/MedievalMatch/{{Season}}.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 48,
+        "Width": 48,
+        "Height": 16
+      },
+      "ToArea": {
+        "X": 80,
+        "Y": 384,
+        "Width": 48,
+        "Height": 16
+      },
+      "When": {
+        "HasMod |contains=Gweniaczek.Medieval_Craftables": true,
+        "Query: '{{Spiderbuttons.CMCT/Config: Gweniaczek.Medieval_Craftables, NotReplaced |contains=Incubator}}' = 'false'": "false",
+        "HayRecolor": "MedievalMatch"
+      }
+    }
+  ]
+}

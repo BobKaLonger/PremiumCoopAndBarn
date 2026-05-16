@@ -1,0 +1,113 @@
+{
+  "Changes": [
+    /*Resource Chickens*/
+    {
+      "LogName": "Resource Chickens",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/UncleArya.ResourceChickens.Coop4",
+      "FromFile": "assets/Maps/Coop24.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4 27 11 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 8",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 15 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 13 6 9 7 4 13 7 4 9 11 4 13 11 4"
+      },
+      "When": {
+        "HasMod |contains=UncleArya.ResourceChickens": true,
+        "Coops": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Resource Chickens",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/UncleArya.ResourceChickens.Coop4",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 13
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 29 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=UncleArya.ResourceChickens": true,
+        "Coops": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Resource Chickens Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=UncleArya.ResourceChickens": true,
+        "Coops": "true"
+      },
+      "TargetField": [
+        "UncleArya.ResourceChickens.GiantCoop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+		   {
+            "Id": "Default_Shift_Coop24_1",
+            "Source": {
+              "X": 6,
+              "Y": 9
+            },
+            "Destination": {
+              "X": 6,
+              "Y": 10
+            },
+            "Size": {
+              "X": 12,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Coop24_2",
+            "Source": {
+              "X": 17,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 17,
+              "Y": 4
+            },
+            "Size": {
+              "X": 5,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+        ],
+        "IndoorItems": [
+          {
+            "Id": "Second_Incubator",
+            "ItemId": "(BC)101",
+            "Tile": {
+              "X": 4,
+              "Y": 3
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    }
+  ]
+}

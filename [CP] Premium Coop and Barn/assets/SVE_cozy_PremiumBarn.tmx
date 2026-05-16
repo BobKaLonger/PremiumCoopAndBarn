@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="28" height="19" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="57">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="28" height="19" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="57">
  <properties>
   <property name="AmbientLight" value="110 110 110"/>
   <property name="AutoFeed" value="T"/>
@@ -34,38 +34,11 @@
   </tile>
  </tileset>
  <tileset firstgid="85" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
-  <image source="paths.png" width="64" height="256"/>
- </tileset>
- <tileset firstgid="149" name="barn" tilewidth="16" tileheight="16" tilecount="84" columns="4">
-  <image source="../../../OvercrowdedPremiumPatch/[CP] Overcrowded Premium Patch/assets/coopTiles.png" width="64" height="336"/>
-  <tile id="12">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="33">
-   <properties>
-    <property name="Passable" type="int" value="0"/>
-    <property name="Trough" value="T"/>
-   </properties>
-  </tile>
-  <tile id="53">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="54">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
- </tileset>
- <tileset firstgid="233" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
   <image source="../../../OvercrowdedPremiumPatch/[CP] Overcrowded Premium Patch/assets/paths.png" width="64" height="256"/>
  </tileset>
  <layer id="1" name="Back" width="28" height="19">
   <data encoding="base64" compression="zlib">
-   eJztUsENwjAQywJZoE+GqMSXyboKpQJUIhbpH9Yhlc6Sdbpr0lJ+WLKUcJzdug7hj71xymwVD1/yGELHetmjg1802Bo7zNLM0gQumUPmM7OR2STnhv6P+6Tues73WbMXD+AmHMjr7HDtrCd94CFMO3vNHEkfwPt7O8hjWDnDc+jvV8rwKnncV87Yi/1KOXmapZnXz7fw5ZzxDZLKPqoZ7XbWGcAzWvRyWsrd0wG4Q5qp0kt30dIB0C+vN+jgEr1+8j6A992S01LuulOAlVttTl7u3FHsW4jO71tQo/Vrvw85lcYJ
+   eJztk9EKgzAMRfsDdWXKLHvcRyi+uh/rp69CAiHcNOrc2y4csIbclGsM4a+rtVYmxetLlhCK9KszCs+LgAn0SLwa8mTdKqnyJLbarM5RnGd11nV97mgGqyeSmIXud6bWCX/WSOSLZ208hD/L6+E80sGa9pTzWne/Ux7DwZr2ZHk5WZ5ezdrPN7Eaz/wNMvCTNdFb0DOrb7AnJ52tBWtskMO+WXoXESy5X96OIpJzD/S/D05PKyuUOdopmafOTfe0srJ69U4hReP9Ge3x+vW8DzRJJqk=
   </data>
  </layer>
  <layer id="3" name="Buildings" width="28" height="19">
@@ -85,12 +58,17 @@
  </layer>
  <layer id="9" name="AlwaysFront" width="28" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUIAMuPJiFBHM4CJgFA0x4MA8J9rERMAsGZKDYEQebWABU2wDV24BkTgOp5oyCUTBSARdhJVQ1y5CK9mEzCwC7+QUR
+   eJxjYBgFo2AUIAMuPJiFBHM4CJgFA0x4MA8J9rERMAsGZAhgYgFQbQM1zBkFo2CkAi7CSqhqliEV7cNmFgBQVwN9
   </data>
  </layer>
- <layer id="7" name="Paths" width="28" height="19" visible="0">
+ <layer id="11" name="AlwaysFront1" width="28" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4A8EAvFtOKPgoEFH4kUGwUDA9DjghCfXD2jYBQQCwBM+Qvl
+   eJxjYBgFo2AUjETgiINNhjkN2NijYBSMgpEFAEZwAgU=
+  </data>
+ </layer>
+ <layer id="7" name="Paths" width="28" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A8EAvFtOKPgoEF2OJiNH4GD0CPC0J8cvWMglFALAAAG/YHRQ==
   </data>
  </layer>
  <objectgroup id="2" name="Back" visible="0">

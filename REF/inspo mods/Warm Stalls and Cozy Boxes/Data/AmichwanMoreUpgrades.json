@@ -1,0 +1,447 @@
+{
+  "Changes": [
+    /*Amichwan's More Upgrades*/
+    {
+      "LogName": "Coop 4 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Coop4",
+      "FromFile": "assets/Maps/Coop16.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 16 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 16 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4 27 11 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 16 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 16 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 13 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 16 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 16 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 11 6 9 7 4 13 7 4"
+      },
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Coop}}' = 'true'": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 4 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Coop4",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 11
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 21 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Coop}}' = 'true'": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 4 More Upgrades Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Coop}}' = 'true'": "true"
+      },
+      "TargetField": [
+        "Amichwan.More.upgrades_SuperCoop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+		   {
+            "Id": "Default_Shift_Coop16_1",
+            "Source": {
+              "X": 10,
+              "Y": 9
+            },
+            "Destination": {
+              "X": 10,
+              "Y": 10
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Coop16_2",
+            "Source": {
+              "X": 17,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 17,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+        ],
+        "IndoorItems": [
+          {
+            "Id": "Default_FeedHopper",
+            "ItemId": "(BC)99",
+            "Tile": {
+              "X": 3,
+              "Y": 3
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Incubator",
+            "ItemId": "(BC)101",
+            "Tile": {
+              "X": 2,
+              "Y": 3
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Incubator2",
+            "ItemId": "(BC)101",
+            "Tile": {
+              "X": 4,
+              "Y": 3
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Coop 5 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Coop5",
+      "FromFile": "assets/Maps/Coop20.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "AutoFeed": "T",
+        "DayTiles": "Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 21 1 24 Buildings 26 2 24 Buildings 27 2 24 Buildings 28 2 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 Back 19 4 25 Back 20 4 25 Back 21 4 25 Back 26 5 25 Back 27 5 25 Back 28 5 25",
+        "Feed": null,
+        "Light": "27 5 4 27 8 4 27 11 4",
+        "NightTiles": "Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 21 1 26 Buildings 26 2 26 Buildings 27 2 26 Buildings 28 2 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 Back 19 4 12 Back 20 4 12 Back 21 4 12 Back 26 5 12 Back 27 5 12 Back 28 5 12",
+        "ProduceArea": "4 4 18 4",
+        "ViewportFollowPlayer": "T",
+        "Warp": "2 13 Farm 21 11",
+        "WindowLight": "2 4 6 3 4 6 4 4 6 19 4 6 20 4 6 21 4 6 26 5 6 27 5 6 28 5 6 2 1 2 3 1 2 4 1 2 19 1 2 20 1 2 21 1 2 26 2 2 27 2 2 28 2 2 2 11 6 9 7 4 13 7 4"
+      },
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Coop}}' = 'true'": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Coop 5 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Coop5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 11
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 6 3 25 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Coop}}' = 'true'": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Coop 5 More Upgrades Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Coops": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Coop}}' = 'true'": "true"
+      },
+      "TargetField": [
+        "Amichwan.More.upgrades_PremiumCoop"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+		   {
+            "Id": "Default_Shift_Coop20_1",
+            "Source": {
+              "X": 8,
+              "Y": 9
+            },
+            "Destination": {
+              "X": 8,
+              "Y": 10
+            },
+            "Size": {
+              "X": 8,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)178"
+          },
+          {
+            "Id": "Default_Shift_Coop20_2",
+            "Source": {
+              "X": 18,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 18,
+              "Y": 4
+            },
+            "Size": {
+              "X": 3,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)272",
+          },
+        ],
+        "IndoorItems": [
+          {
+            "Id": "Default_Auto-Petter",
+            "ItemId": "(BC)272",
+            "Tile": {
+              "X": 20,
+              "Y": 3
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 4 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Barn4",
+      "FromFile": "assets/Maps/Barn16.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 12 Back 26 4 12 Back 28 4 12 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 12 Back 37 4 12 Back 38 4 12",
+        "ProduceArea": "9 4 24 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 10 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4"
+      },
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Barn}}' = 'true'": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Barn 4 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Barn4",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 8 3 23 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Barn}}' = 'true'": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Barn 4 More Upgrades Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Super Barn}}' = 'true'": "true"
+      },
+      "TargetField": [
+        "Amichwan.More.upgrades_SuperBarn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn16_1",
+            "Source": {
+              "X": 26,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 26,
+              "Y": 4
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          }
+        ]
+      }
+    },
+    {
+      "LogName": "Barn 5 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Barn5",
+      "FromFile": "assets/Maps/Barn20.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "AmbientNightLight": "150 150 30",
+        "DayTiles": "Buildings 4 1 24 Buildings 5 1 24 Buildings 7 1 24 Buildings 8 1 24 Buildings 10 1 24 Buildings 11 1 24 Buildings 13 1 24 Buildings 14 1 24 Buildings 16 1 24 Buildings 17 1 24 Buildings 19 1 24 Buildings 20 1 24 Buildings 22 1 24 Buildings 23 1 24 Buildings 25 1 24 Buildings 26 1 24 Buildings 28 1 24 Buildings 29 1 24 Buildings 31 1 24 Buildings 32 1 24 Buildings 34 1 24 Buildings 35 1 24 Buildings 37 1 24 Buildings 38 1 24 Buildings 40 1 24 Buildings 41 1 24 Buildings 43 1 24 Buildings 44 1 24 Buildings 46 1 24 Buildings 47 1 24 Buildings 49 1 24 Buildings 50 1 24 Back 4 4 25 Back 5 4 25 Back 7 4 25 Back 8 4 46 Back 10 4 46 Back 11 4 46 Back 13 4 46 Back 14 4 46 Back 16 4 46 Back 17 4 46 Back 19 4 46 Back 20 4 46 Back 22 4 46 Back 23 4 46 Back 25 4 25 Back 26 4 25 Back 28 4 25 Back 29 4 25 Back 31 4 25 Back 32 4 25 Back 34 4 25 Back 35 4 25 Back 37 4 25 Back 38 4 25 Back 40 4 25 Back 41 4 25 Back 43 4 25 Back 44 4 25 Back 46 4 25 Back 47 4 25 Back 49 4 25 Back 50 4 25",
+        "Feed": null,
+        "Light": "21 17 4 17 21 4 21 21 4 25 21 4",
+        "NightTiles": "Buildings 4 1 26 Buildings 5 1 26 Buildings 7 1 26 Buildings 8 1 26 Buildings 10 1 26 Buildings 11 1 26 Buildings 13 1 26 Buildings 14 1 26 Buildings 16 1 26 Buildings 17 1 26 Buildings 19 1 26 Buildings 20 1 26 Buildings 22 1 26 Buildings 23 1 26 Buildings 25 1 26 Buildings 26 1 26 Buildings 28 1 26 Buildings 29 1 26 Buildings 31 1 26 Buildings 32 1 26 Buildings 34 1 26 Buildings 35 1 26 Buildings 37 1 26 Buildings 38 1 26 Buildings 40 1 26 Buildings 41 1 26 Buildings 43 1 26 Buildings 44 1 26 Buildings 46 1 26 Buildings 47 1 26 Buildings 49 1 26 Buildings 50 1 26 Back 4 4 12 Back 5 4 12 Back 7 4 12 Back 8 4 53 Back 10 4 53 Back 11 4 53 Back 13 4 53 Back 14 4 53 Back 16 4 53 Back 17 4 53 Back 19 4 53 Back 20 4 53 Back 22 4 53 Back 23 4 53 Back 25 4 53 Back 26 4 53 Back 28 4 53 Back 29 4 12 Back 31 4 12 Back 32 4 12 Back 34 4 12 Back 35 4 54 Back 37 4 12 Back 38 4 12 Back 40 4 54 Back 41 4 12 Back 43 4 12 Back 44 4 12 Back 46 4 12 Back 47 4 12 Back 49 4 12 Back 50 4 54",
+        "ProduceArea": "9 4 24 11",
+        "ViewportFollowPlayer": "T",
+        "Warp": "10 18 Farm 1 1",
+        "WindowLight": "4 4 6 5 4 6 7 4 6 8 4 6 10 4 6 11 4 6 13 4 6 14 4 6 16 4 6 17 4 6 19 4 6 20 4 6 22 4 6 23 4 6 25 4 6 26 4 6 28 4 6 29 4 6 31 4 6 32 4 6 34 4 6 35 4 6 37 4 6 38 4 6 40 4 6 41 4 6 43 4 6 44 4 6 46 4 6 47 4 6 49 4 6 50 4 6 10 16 6 4 1 2 5 1 2 7 1 2 8 1 2 10 1 2 11 1 2 13 1 2 14 1 2 16 1 2 17 1 2 19 1 2 21 1 2 22 1 2 23 1 2 25 1 2 26 1 2 28 1 2 29 1 2 31 1 2 32 1 2 34 1 2 35 1 2 37 1 2 38 1 2 40 1 2 41 1 2 43 1 2 44 1 2 46 1 2 47 1 2 49 1 2 50 1 2 3 7 4 7 7 4 14 7 4 18 7 4 25 7 4 29 7 4 36 7 4 40 7 4 47 7 4 51 7 4 3 12 4 7 12 4 14 12 4 18 12 4 25 12 4 29 12 4 36 12 4 40 12 4 47 12 4 51 12 4"
+      },
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Barn}}' = 'true'": "true"
+      }
+    },
+    {
+      "LogName": "Hay Fix Barn 5 More Upgrades",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/Amichwan.More.upgrades_Barn5",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Spiderbuttons.BETAS_ActionList \"Spiderbuttons.BETAS_ClearObjects Here All 8 3 27 3\" \"Spiderbuttons.BETAS_PlaySound explosion\""
+          }
+        }
+      ],
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Barn}}' = 'true'": "true",
+        "ClearHay": "true"
+      }
+    },
+    {
+      "LogName": "Move Barn 5 More Upgrades Machines",
+      "Action": "EditData",
+      "Priority": "Default +10",
+      "Target": "Data/Buildings",
+      "When": {
+        "HasMod |contains=Amichwan.More.upgrades": true,
+        "Barns": "true",
+        "Query: '{{Spiderbuttons.CMCT/Config: Amichwan.More.upgrades, Premium Barn}}' = 'true'": "true"
+      },
+      "TargetField": [
+        "Amichwan.More.upgrades_PremiumBarn"
+      ],
+      "Entries": {
+        "IndoorItemMoves": [
+          {
+            "Id": "Default_Shift_Barn20_1",
+            "Source": {
+              "X": 30,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 30,
+              "Y": 4
+            },
+            "Size": {
+              "X": 4,
+              "Y": 1
+            },
+            "UnlessItemId": null
+          },
+          {
+            "Id": "Default_Shift_Barn20_2",
+            "Source": {
+              "X": 4,
+              "Y": 3
+            },
+            "Destination": {
+              "X": 4,
+              "Y": 4
+            },
+            "Size": {
+              "X": 1,
+              "Y": 1
+            },
+            "UnlessItemId": "(BC)272"
+          }
+        ],
+        "IndoorItems": [
+          {
+            "Id": "Default_FeedHopper",
+            "ItemId": "(BC)99",
+            "Tile": {
+              "X": 6,
+              "Y": 3
+            },
+            "Indestructible": true
+          },
+          {
+            "Id": "Default_Auto-Petter",
+            "ItemId": "(BC)272",
+            "Tile": {
+              "X": 4,
+              "Y": 3
+            },
+            "Indestructible": false
+          }
+        ]
+      }
+    }
+  ]
+}

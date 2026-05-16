@@ -36,33 +36,9 @@
  <tileset firstgid="85" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
   <image source="paths.png" width="64" height="256"/>
  </tileset>
- <tileset firstgid="149" name="barn" tilewidth="16" tileheight="16" tilecount="84" columns="4">
-  <image source="../../../OvercrowdedPremiumPatch/[CP] Overcrowded Premium Patch/assets/coopTiles.png" width="64" height="336"/>
-  <tile id="12">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="33">
-   <properties>
-    <property name="Passable" type="int" value="0"/>
-    <property name="Trough" value="T"/>
-   </properties>
-  </tile>
-  <tile id="53">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="54">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
- </tileset>
  <layer id="1" name="Back" width="30" height="14">
   <data encoding="base64" compression="zlib">
-   eJztksENwjAMRb1AFuDYISpxZbKukrYiCNgkS+FK/eLrK4QSEOKApXewnfjHdsz+9i07OD3RvcnebEAtrz080g1OJHq5qzzLca1Q6TcK2dmtIAY/i6959bfqjs4kzA1xrqnzgeHc0svRScKpIc6zC3bfJfefSPuTutiJ7oF1oX12LsK1IZ7XHfDM0bfqJjnH7y39vVpupJow/WM6p5nuvvqXVLOmW5pTbJxt6d4v2Q2JaYqr
+   eJztkkEKgDAMBPuBqlhR8egjLF59WZ9uBANhibVWEQ8G5tBszNK1xvz1Vi3EJBhvMhsTeBftDke+FpjgW+RMw32pvp4YdrjHZw9n1LVzim9BlECV0Zc7MR8untvuUhMOaDL6Mruj3J3wftJXemq58/zm3RId0Gf0/f4PMHPN18GcllGqVoidXPjGMKez9+IjOnrGfK/mZyO6pn2pVgduG6s=
   </data>
  </layer>
  <layer id="3" name="Buildings" width="30" height="14">
@@ -72,7 +48,7 @@
  </layer>
  <layer id="10" name="Buildings1" width="30" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBg44AjED4H4ERA/BuIn1DW7AZecKxXtwWI2TntHAfWBGxC7D7QjRsEoGAVUAQDlagYk
+   eJxjYBg44AjEvkDsB8T+QBxAXbMbcMm5UtEeLGbjtHcUUB+4AbH7QDtiFIyCUUAVAADteAPU
   </data>
  </layer>
  <layer id="5" name="Front" width="30" height="14">
@@ -85,7 +61,7 @@
    eJxjYBgFo2AUjIJRgA64BshewwGydzAAAEVUADw=
   </data>
  </layer>
- <layer id="7" name="Paths" width="30" height="14">
+ <layer id="7" name="Paths" width="30" height="14" visible="0">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4C2IBaNTU3+KKAPICbcsclTIjYKRh4AAOnIBi4=
   </data>

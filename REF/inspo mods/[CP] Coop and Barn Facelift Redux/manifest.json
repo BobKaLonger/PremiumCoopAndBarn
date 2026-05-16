@@ -1,0 +1,12 @@
+{
+    "Name": "Coop and Barn Facelift Redux",
+    "Author": "vikich3rry",
+    "Version": "1.2.0",
+    "Description": "Cleans up, slightly expands and recolors all coops and barns!",
+    "UniqueID": "vikich3rry.CoopBarnFaceliftRedux",
+    "MinimumApiVersion": "4.0",
+    "UpdateKeys": [ "Nexus:27521" ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

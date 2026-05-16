@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="14" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="135">
+ <properties>
+  <property name="AmbientLight" value="110 110 110"/>
+  <property name="AmbientNightLight" value="150 150 30"/>
+  <property name="DayTiles" value="Buildings 2 1 24 Buildings 3 1 24 Buildings 4 1 24 Buildings 6 1 24 Buildings 7 1 24 Buildings 9 1 24 Buildings 10 1 24 Buildings 11 1 24 Back 2 4 25 Back 3 4 25 Back 4 4 25 "/>
+  <property name="NightTiles" value="Buildings 2 1 26 Buildings 3 1 26 Buildings 4 1 26 Buildings 6 1 26 Buildings 7 1 26 Buildings 9 1 26 Buildings 10 1 26 Buildings 11 1 26 Back 2 4 12 Back 3 4 12 Back 4 4 12 "/>
+  <property name="ProduceArea" value="4 4 8 4"/>
+  <property name="ViewportFollowPlayer" type="bool" value="true"/>
+  <property name="Warp" value="2 11 Farm 21 11"/>
+  <property name="WindowLight" value="2 1 2 3 1 2 4 1 2 6 1 2 7 1 2 9 1 2 10 1 2 11 1 2 2 4 6 3 4 6 4 4 6 6 4 6 7 4 6 9 4 6 10 4 6 11 4 6 2 9 6"/>
+ </properties>
+ <tileset firstgid="1" name="Coop" tilewidth="16" tileheight="16" tilecount="84" columns="4">
+  <image source="coopTiles.png" width="64" height="336"/>
+  <tile id="12">
+   <properties>
+    <property name="Type" value="Wood"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="Passable" type="int" value="0"/>
+    <property name="Trough" value="T"/>
+   </properties>
+  </tile>
+  <tile id="53">
+   <properties>
+    <property name="Type" value="Wood"/>
+   </properties>
+  </tile>
+  <tile id="56">
+   <properties>
+    <property name="Type" value="Wood"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="85" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
+  <image source="paths.png" width="64" height="256"/>
+ </tileset>
+ <tileset firstgid="149" name="z_stallsboxes" tilewidth="16" tileheight="16" tilecount="40" columns="4">
+  <image source="z_stallsboxes.png" width="64" height="160"/>
+ </tileset>
+ <tileset firstgid="189" name="z_waterTroughTilesheet" tilewidth="16" tileheight="16" tilecount="10" columns="10">
+  <image source="z_waterTroughTilesheet.png" width="160" height="16"/>
+ </tileset>
+ <layer id="1" name="Back" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg6wAmIzbBgXjRsBlHbANMHEpNCwiC+EBALo2E+oB5eJPtg5pkjscWAWByi/gAQO4ggycEAsnp0M2D6gXSDOZo+bOrxiWHTB8NKaBjZDFz6zLGELbKdDGh66QEAQeILKw==
+  </data>
+ </layer>
+ <layer id="9" name="Back2" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj6YB0aJgZsxCK2GY2/hxJHDTCYx8CgMJeBIQGEgewFA+0ecgEAVpUIzw==
+  </data>
+ </layer>
+ <layer id="11" name="Back3" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZYAMQb0LDQLGGgXQTtcFcBoYFIDzQ7qAEAABhCwcj
+  </data>
+ </layer>
+ <layer id="3" name="Buildings" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYCIRMzIwNLACaUEglkTCgjjYMD4rVJ8oiRimzxOIdzNAwGIgXgLEZgyYwAyitgGmbzcWNfgATB+pYCjp4yRDH1BPgyGEBgNuIDakMQYAOusQnQ==
+  </data>
+ </layer>
+ <layer id="12" name="Buildings2" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgcYCkQL0PDy4nQtwa7WAMyfweljhsFAwYAnOgGdQ==
+  </data>
+ </layer>
+ <layer id="14" name="Buildings3" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjaYC12sQZ6u2MU0AYAAGKJAds=
+  </data>
+ </layer>
+ <layer id="5" name="Front" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAfOJKmtgHGdgXi7VD2fCBegEefK5K+7XjUjQLSAQuU5gBiLiIwMkDn0woAADZiBSo=
+  </data>
+ </layer>
+ <layer id="15" name="Front2" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg6YMtAO2AU0B0AAGI/ALU=
+  </data>
+ </layer>
+ <layer id="8" name="Paths" width="14" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DwAgACoAAB
+  </data>
+ </layer>
+ <objectgroup id="2" name="Back">
+  <object id="2" name="TileData" x="16" y="48" width="48.48" height="112">
+   <properties>
+    <property name="NPCBarrier" value="T"/>
+   </properties>
+  </object>
+  <object id="129" name="TileData" x="112" y="48" width="16" height="16">
+   <properties>
+    <property name="mushymato.MMAP_AnimalSpot" value="T"/>
+   </properties>
+  </object>
+  <object id="131" name="TileData" x="32" y="160" width="16" height="16">
+   <properties>
+    <property name="NPCBarrier" value="T"/>
+   </properties>
+  </object>
+  <object id="132" name="TileData" x="128" y="48" width="16" height="16">
+   <properties>
+    <property name="mushymato.MMAP_AnimalSpot" value="T"/>
+   </properties>
+  </object>
+  <object id="133" name="TileData" x="144" y="48" width="16" height="16">
+   <properties>
+    <property name="mushymato.MMAP_AnimalSpot" value="T"/>
+   </properties>
+  </object>
+  <object id="134" name="TileData" x="160" y="48" width="16" height="16">
+   <properties>
+    <property name="mushymato.MMAP_AnimalSpot" value="T"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Buildings"/>
+ <objectgroup id="6" name="Front"/>
+ <objectgroup id="7" name="Paths"/>
+</map>

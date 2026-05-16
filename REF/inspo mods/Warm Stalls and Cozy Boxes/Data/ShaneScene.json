@@ -1,0 +1,41 @@
+{
+  "Changes": [
+    /*ShaneScene*/
+    {
+      "LogName": "Shane Scene",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/MarnieBarn",
+      "FromFile": "assets/Maps/MarnieBarn_Fresh.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "ProduceArea": "6 4 8 7",
+        "Warp": "11 15 Farm 14 11",
+        "WindowLight": "3 1 2 8 1 2 9 1 2 10 1 2 14 1 2 3 4 6 8 4 6 9 4 6 10 4 6 14 4 6 11 13 6"
+      },
+      "When": {
+        "ShaneScene": "Fresh",
+        "Coops": "true"
+      }
+    },
+	{
+      "LogName": "Shane Scene",
+      "Action": "EditMap",
+      "Priority": "Default +10",
+      "Target": "Maps/MarnieBarn",
+      "FromFile": "assets/Maps/MarnieBarn_Worn.tmx",
+      "PatchMode": "Replace",
+      "MapProperties": {
+        "AmbientLight": "110 110 110",
+        "ProduceArea": "6 4 8 7",
+        "Warp": "11 15 Farm 14 11",
+        "WindowLight": "3 1 2 8 1 2 9 1 2 10 1 2 14 1 2 3 4 6 8 4 6 9 4 6 10 4 6 14 4 6 11 13 6"
+      },
+      "When": {
+        "ShaneScene": "Worn",
+        "Coops": "true"
+      }
+    },
+  ]
+}

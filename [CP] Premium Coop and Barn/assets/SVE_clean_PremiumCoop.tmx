@@ -36,33 +36,9 @@
  <tileset firstgid="85" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
   <image source="paths.png" width="64" height="256"/>
  </tileset>
- <tileset firstgid="149" name="barn" tilewidth="16" tileheight="16" tilecount="84" columns="4">
-  <image source="../../../OvercrowdedPremiumPatch/[CP] Overcrowded Premium Patch/assets/coopTiles.png" width="64" height="336"/>
-  <tile id="12">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="33">
-   <properties>
-    <property name="Passable" type="int" value="0"/>
-    <property name="Trough" value="T"/>
-   </properties>
-  </tile>
-  <tile id="53">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
-  <tile id="54">
-   <properties>
-    <property name="Type" value="Wood"/>
-   </properties>
-  </tile>
- </tileset>
  <layer id="1" name="Back" width="30" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBgF9AJOQGyGhJUoxJYMDA0ws4BmN+CylxeIFyJhMzS96JiQHLJZvHj8uxANnwZiKSiGicH4p9H46PLofGLtPc2A6Q5K5dDDB91eWth5GupnWFwi+5+WdmKLBxigtZ3IaQzdv7S0EwbQ0xit/UmsvdQO98EEAEhFie4=
+   eJxjYBgF9AJOQGyGhJUoxJYMDA0ws4BmN+CylxcNm6HpRceE5NDNI9ZecyCWgmKYGIxvjsZHl8fGJ8ZecwZMd1Aqhx4+6PbSwk5scsj20tpObOFOL39i8y8t7US2hwGNT6/4xGcvtcN2MAEAxjsa7g==
   </data>
  </layer>
  <layer id="3" name="Buildings" width="30" height="14">
@@ -72,7 +48,7 @@
  </layer>
  <layer id="10" name="Buildings1" width="30" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBg44AjED4H4ERA/BuIn1DW7AZecKxXtwWI2TntHAfWBGxC7D7QjRsEoGAVUAQDlagYk
+   eJxjYBg44AjEvkDsB8T+QBxAXbMbcMm5UtEeLGbjtHcUUB+4AbH7QDtiFIyCUUAVAADteAPU
   </data>
  </layer>
  <layer id="5" name="Front" width="30" height="14">

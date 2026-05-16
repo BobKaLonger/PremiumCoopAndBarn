@@ -1,0 +1,16 @@
+{
+  "Enable Coops": "true",
+  "Enable Barns": "true",
+  "Floor Version": "Clean",
+  "Enable Wall Color": "true",
+  "Wall Color": "bluegray",
+  "Enable Wood Color": "true",
+  "Wood Color": "VPR",
+  "Recolor Machines": "true",
+  "Hay": "true",
+  "Hay Bale": "true",
+  "Ostrich Incubator": "true",
+  "AutoPetter": "true",
+  "AutoGrabber": "true",
+  "Heater": "true"
+}
