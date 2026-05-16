@@ -66,7 +66,7 @@
    eJxjYBgFo2AUjETgiINNhjkN2NijYBSMgpEFAEZwAgU=
   </data>
  </layer>
- <layer id="7" name="Paths" width="28" height="19">
+ <layer id="7" name="Paths" width="28" height="19" visible="0">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4A8EAvFtOKPgoEF2OJiNH4GD0CPC0J8cvWMglFALAAAG/YHRQ==
   </data>
