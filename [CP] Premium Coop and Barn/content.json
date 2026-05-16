@@ -13,32 +13,52 @@
             "Default": "Clean",
             "Section": "Indoor Appearance"
         },
-        "Machines": {
-			"AllowValues": "Exposed, Hidden, None",
-			"Description": "For the Heater, Auto-Grabber, and Auto-Petter, choose to have them exposed, hidden, or not spawn at all. Hidden places them all behind a wall but will still function.",
-			"Default": "Exposed",
+        "Indoor Style": {
+			"AllowValues": "Classic SVE, Custom",
+			"Description": "Choose either classic SVE interiors or custom interiors.",
+			"Default": "Classic SVE",
 			"Section": "Indoor Appearance"
         }
     },
 	"Changes": [
 		{
 			"Action": "Load",
-			"Target": "Maps/Premium_Clean_PremiumBarn",
+			"Target": "Buildings/SVE_PremiumBarn",
+			"FromFile": "assets/Buildings/PremiumBarn.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/SVE_PremiumCoop",
+			"FromFile": "assets/Buildings/PremiumCoop.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/SVE_PremiumBarn_PaintMask",
+			"FromFile": "assets/Buildings/PremiumBarn_PaintMask.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/SVE_PremiumCoop_PaintMask",
+			"FromFile": "assets/Buildings/PremiumCoop_PaintMask.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Clean_PremiumBarn",
 			"FromFile": "assets/clean_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Premium_Clean_PremiumCoop",
+			"Target": "Maps/Clean_PremiumCoop",
 			"FromFile": "assets/clean_PremiumCoop.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Premium_Cozy_PremiumBarn",
+			"Target": "Maps/Cozy_PremiumBarn",
 			"FromFile": "assets/cozy_PremiumBarn.tmx"
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Premium_Clean_PremiumCoop",
+			"Target": "Maps/Clean_PremiumCoop",
 			"FromFile": "assets/cozy_PremiumCoop.tmx"
 		},
 		{
@@ -57,27 +77,19 @@
 	    },
         {
             "Action": "Include",
-            "FromFile": "data/PremiumExposed.json",
+            "FromFile": "data/indoorClassic.json",
             "When":
             {
-                "Machines": "Exposed"
+                "Indoor Style": "Classic SVE"
             }
         },
         {
             "Action": "Include",
-            "FromFile": "data/PremiumHidden.json",
+            "FromFile": "data/indoorCustom.json",
             "When":
             {
-                "Machines": "Hidden"
+                "Indoor Style": "Custom"
 			}
-        },
-        {
-            "Action": "Include",
-            "FromFile": "data/PremiumNone.json",
-            "When":
-            {
-                "Machines": "None"
-            }
         }
     ]
 }
