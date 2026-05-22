@@ -34,7 +34,7 @@
   </tile>
  </tileset>
  <tileset firstgid="85" name="p" tilewidth="16" tileheight="16" tilecount="64" columns="4">
-  <image source="../../../OvercrowdedPremiumPatch/[CP] Overcrowded Premium Patch/assets/paths.png" width="64" height="256"/>
+  <image source="paths.png" width="64" height="256"/>
  </tileset>
  <layer id="1" name="Back" width="28" height="19">
   <data encoding="base64" compression="zlib">
