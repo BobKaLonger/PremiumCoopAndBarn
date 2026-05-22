@@ -162,18 +162,6 @@ namespace PremiumCoopAndBarn
             });
         }
 
-        [HarmonyPatch(typeof(Building), nameof(Building.FinishConstruction))]
-        public static class InstantBuildingConstructionPatch
-        {
-            public static void Postfix(Building __instance)
-            {
-                if (__instance.buildingType.Value is not (PremiumBarn or PremiumCoop))
-                    return;
-
-                //double check which indoor items need to be spawned
-            }
-        }
-
         [HarmonyPatch(typeof(Building), nameof(Building.doesTileHaveProperty))]
         public static class PremiumBarnDoorCursorPatch
         {
