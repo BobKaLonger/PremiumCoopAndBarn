@@ -24,6 +24,12 @@ namespace PremiumCoopAndBarn
         internal const string PremiumCoop = $"{PremiumCP}PremiumCoop";
         public override void Entry(IModHelper helper)
         {
+            if (helper.ModRegistry.IsLoaded("FlashShifter.StardewValleyExpandedCP"))
+            {
+                Monitor.Log("SVE is loaded, Premium Coop and Barn (Standalone) is disabled.", LogLevel.Info);
+                return;
+            }
+
             modInstance = this;
 
             var mi = Helper.ModRegistry.Get("bobkalonger.PremiumCoopAndBarnCP");
@@ -47,19 +53,19 @@ namespace PremiumCoopAndBarn
             {
                 if (b.buildingType.Value == PremiumBarn)
                 {
-                    var ultimateLightBL = new Point(b.tileX.Value + 3, b.tileY.Value + 3);
-                    var ll = new LightSource($"{PremiumCP}BarnLight_{b.tileX.Value}_{b.tileY.Value}_L", 4, ultimateLightBL.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
+                    var premiumLightBL = new Point(b.tileX.Value + 3, b.tileY.Value + 3);
+                    var ll = new LightSource($"{PremiumCP}BarnLight_{b.tileX.Value}_{b.tileY.Value}_L", 4, premiumLightBL.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
                     Game1.currentLightSources.Add(ll.Id, ll);
 
-                    var ultimateLightBR = new Point(b.tileX.Value + 8, b.tileY.Value + 3);
-                    var lr = new LightSource($"{PremiumCP}BarnLight_{b.tileX.Value}_{b.tileY.Value}_R", 4, ultimateLightBR.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
+                    var premiumLightBR = new Point(b.tileX.Value + 8, b.tileY.Value + 3);
+                    var lr = new LightSource($"{PremiumCP}BarnLight_{b.tileX.Value}_{b.tileY.Value}_R", 4, premiumLightBR.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
                     Game1.currentLightSources.Add(lr.Id, lr);
                 }
 
                 if (b.buildingType.Value == PremiumCoop)
                 {
-                    var ultimateLightC = new Point(b.tileX.Value + 6, b.tileY.Value + 2);
-                    var lc = new LightSource($"{PremiumCP}CoopLight_{b.tileX.Value}_{b.tileY.Value}", 4, ultimateLightC.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
+                    var premiumLightC = new Point(b.tileX.Value + 6, b.tileY.Value + 2);
+                    var lc = new LightSource($"{PremiumCP}CoopLight_{b.tileX.Value}_{b.tileY.Value}", 4, premiumLightC.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
                     Game1.currentLightSources.Add(lc.Id, lc);
                 }
             }
@@ -130,8 +136,8 @@ namespace PremiumCoopAndBarn
                 {
                     interior.mapPath.Value = __instance.buildingType.Value switch
                     {
-                        PremiumBarn => $"Maps/SVE_{modInstance!.GetBarnFloorConfig()}_UltimateBarn",
-                        PremiumCoop => $"Maps/SVE_{modInstance!.GetCoopFloorConfig()}_UltimateCoop",
+                        PremiumBarn => $"Maps/SVE_{modInstance!.GetBarnFloorConfig()}_PremiumBarn",
+                        PremiumCoop => $"Maps/SVE_{modInstance!.GetCoopFloorConfig()}_PremiumCoop",
                         _ => interior.mapPath.Value
                     };
                 }
@@ -182,7 +188,7 @@ namespace PremiumCoopAndBarn
                     {
                         if (property_name == "Action")
                         {
-                            property_value = "meow";
+                            property_value = "woof";
                             __result = true;
                         }
                     }

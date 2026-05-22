@@ -8,7 +8,6 @@
             },
             "Entries": {
                 "{{ModId}}_PremiumBarn": {
-                    "ID": "{{i18n:building.premium-barn.name}}",
                     "Name": "{{i18n:building.premium-barn.name}}",
                     "Description": "{{i18n:building.premium-barn.description}}",
                     "Texture": "Buildings\\SVE_PremiumBarn",
@@ -30,7 +29,7 @@
                     "BuildMaterials": [
                         {
                             "ID": "(O)335",
-                            "ItemId": "(O)335)",
+                            "ItemId": "(O)335",
                             "Amount": 30
                         },
                         {
@@ -175,7 +174,6 @@
             },
             "Entries": {
                 "{{ModId}}_PremiumCoop": {
-                    "ID": "{{i18n:building.premium-coop.name}}",
                     "Name": "{{i18n:building.premium-coop.name}}",
                     "Description": "{{i18n:building.premium-coop.description}}",
                     "Texture": "Buildings\\SVE_PremiumCoop",
@@ -352,7 +350,6 @@
             },
             "Entries": {
                 "{{ModId}}_PremiumBarn": {
-                    "ID": "{{i18n:building.premium-barn.name}}",
                     "Name": "{{i18n:building.premium-barn.name}}",
                     "Description": "{{i18n:building.premium-barn.description}}",
                     "Texture": "Buildings\\SVE_PremiumBarn",
@@ -374,7 +371,7 @@
                     "BuildMaterials": [
                         {
                             "ID": "(O)335",
-                            "ItemId": "(O)335)",
+                            "ItemId": "(O)335",
                             "Amount": 30
                         },
                         {
@@ -519,7 +516,6 @@
             },
             "Entries": {
                 "{{ModId}}_PremiumCoop": {
-                    "ID": "{{i18n:building.premium-coop.name}}",
                     "Name": "{{i18n:building.premium-coop.name}}",
                     "Description": "{{i18n:building.premium-coop.description}}",
                     "Texture": "Buildings\\SVE_PremiumCoop",

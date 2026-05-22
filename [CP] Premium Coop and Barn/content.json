@@ -18,48 +18,75 @@
 		{
 			"Action": "Load",
 			"Target": "Buildings/SVE_PremiumBarn",
-			"FromFile": "assets/Buildings/PremiumBarn.png"
+			"FromFile": "assets/Buildings/PremiumBarn.png",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Buildings/SVE_PremiumCoop",
-			"FromFile": "assets/Buildings/PremiumCoop.png"
+			"FromFile": "assets/Buildings/PremiumCoop.png",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Buildings/SVE_PremiumBarn_PaintMask",
-			"FromFile": "assets/Buildings/PremiumBarn_PaintMask.png"
+			"FromFile": "assets/Buildings/PremiumBarn_PaintMask.png",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Buildings/SVE_PremiumCoop_PaintMask",
-			"FromFile": "assets/Buildings/PremiumCoop_PaintMask.png"
+			"FromFile": "assets/Buildings/PremiumCoop_PaintMask.png",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Maps/SVE_Clean_PremiumBarn",
-			"FromFile": "assets/SVE_clean_PremiumBarn.tmx"
+			"FromFile": "assets/SVE_clean_PremiumBarn.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Maps/SVE_Clean_PremiumCoop",
-			"FromFile": "assets/SVE_clean_PremiumCoop.tmx"
+			"FromFile": "assets/SVE_clean_PremiumCoop.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
 			"Target": "Maps/SVE_Cozy_PremiumBarn",
-			"FromFile": "assets/SVE_cozy_PremiumBarn.tmx"
+			"FromFile": "assets/SVE_cozy_PremiumBarn.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/SVE_Clean_PremiumCoop",
-			"FromFile": "assets/SVE_cozy_PremiumCoop.tmx"
+			"Target": "Maps/SVE_Cozy_PremiumCoop",
+			"FromFile": "assets/SVE_cozy_PremiumCoop.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
 		},
 		{
 			"Action": "EditData",
 			"Target": "Data/PaintData",
 			"Entries": {
 				"{{ModId}}_PremiumBarn": "Building/-10 0/Roof/-10 5/Trim/-5 0"
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
@@ -67,13 +94,16 @@
 			"Target": "Data/PaintData",
 			"Entries": {
 				"{{ModId}}_PremiumCoop": "Building/-12 0/Roof/-10 5/Trim/-10 5"
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Include",
 			"FromFile": "data/indoorClassic.json",
 			"When": {
-				"Indoor Style": "Classic SVE"
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		}
 	]
