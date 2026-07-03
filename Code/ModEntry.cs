@@ -18,7 +18,6 @@ namespace PremiumCoopAndBarn
     public class ModEntry : Mod
     {
         public static ModEntry? modInstance;
-        public static IContentPack? cpPack;
         internal const string PremiumCP = "bobkalonger.PremiumCoopAndBarnCP_";
         internal const string PremiumBarn = $"{PremiumCP}PremiumBarn";
         internal const string PremiumCoop = $"{PremiumCP}PremiumCoop";
@@ -32,10 +31,6 @@ namespace PremiumCoopAndBarn
 
             modInstance = this;
 
-            var mi = Helper.ModRegistry.Get("bobkalonger.PremiumCoopAndBarnCP");
-            if (mi != null)
-                cpPack = mi.GetType().GetProperty("ContentPack")?.GetValue(mi) as IContentPack;
-
             helper.Events.Player.Warped += PlayerOnWarped;
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.GameLoop.DayStarted += OnDayStarted;
@@ -45,13 +40,19 @@ namespace PremiumCoopAndBarn
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
+        private static bool HasSecondDoor(Building b) =>
+            b.buildingType.Value == PremiumBarn && b.tilesWide.Value == 11;
+
+        private static bool IsSVECoop(Building b) =>
+            b.buildingType.Value == PremiumCoop && b.tilesWide.Value == 9;
+
         private void PlayerOnWarped(object? sender, WarpedEventArgs e)
         {
             RemoveCustomlights(e.OldLocation);
 
             foreach (var b in e.NewLocation.buildings)
             {
-                if (b.buildingType.Value == PremiumBarn)
+                if (HasSecondDoor(b))
                 {
                     var premiumLightBL = new Point(b.tileX.Value + 3, b.tileY.Value + 3);
                     var ll = new LightSource($"{PremiumCP}BarnLight_{b.tileX.Value}_{b.tileY.Value}_L", 4, premiumLightBL.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
@@ -62,7 +63,7 @@ namespace PremiumCoopAndBarn
                     Game1.currentLightSources.Add(lr.Id, lr);
                 }
 
-                if (b.buildingType.Value == PremiumCoop)
+                if (IsSVECoop(b))
                 {
                     var premiumLightC = new Point(b.tileX.Value + 6, b.tileY.Value + 2);
                     var lc = new LightSource($"{PremiumCP}CoopLight_{b.tileX.Value}_{b.tileY.Value}", 4, premiumLightC.ToVector2() * Game1.tileSize, 1f, Color.Black, LightSource.LightContext.None);
@@ -101,49 +102,6 @@ namespace PremiumCoopAndBarn
             });
         }
 
-        private string? _cachedBarnFloorConfig = null;
-        private string GetBarnFloorConfig()
-        {
-            if (_cachedBarnFloorConfig != null) return _cachedBarnFloorConfig;
-            var config = cpPack?.ReadJsonFile<Dictionary<string, string>>("config.json");
-            if (config != null && config.TryGetValue("Barn Floor", out string? value))
-                _cachedBarnFloorConfig = value;
-            return _cachedBarnFloorConfig ?? "Clean";
-        }
-
-        private string? _cachedCoopFloorConfig = null;
-        private string GetCoopFloorConfig()
-        {
-            if (_cachedCoopFloorConfig != null) return _cachedCoopFloorConfig;
-            var config = cpPack?.ReadJsonFile<Dictionary<string, string>>("config.json");
-            if (config != null && config.TryGetValue("Coop Floor", out string? value))
-                _cachedCoopFloorConfig = value;
-            return _cachedCoopFloorConfig ?? "Clean";
-        }
-
-        [HarmonyPatch(typeof(Building), nameof(Building.InitializeIndoor))]
-        public static class BuildingInitializeIndoorPrefix
-        {
-            public static void Prefix(Building __instance)
-            {
-                if (__instance.buildingType.Value is not (PremiumBarn or PremiumCoop))
-                    return;
-
-                var interior = __instance.indoors.Value;
-                if (interior == null) return;
-
-                if (string.IsNullOrEmpty(interior.mapPath.Value) || interior.mapPath.Value.Contains("{{"))
-                {
-                    interior.mapPath.Value = __instance.buildingType.Value switch
-                    {
-                        PremiumBarn => $"Maps/SVE_{modInstance!.GetBarnFloorConfig()}_PremiumBarn",
-                        PremiumCoop => $"Maps/SVE_{modInstance!.GetCoopFloorConfig()}_PremiumCoop",
-                        _ => interior.mapPath.Value
-                    };
-                }
-            }
-        }
-
         private void OnDayStarted(object? sender, DayStartedEventArgs e)
         {
             Utility.ForEachBuilding(building =>
@@ -167,7 +125,7 @@ namespace PremiumCoopAndBarn
         {
             public static void Postfix(Building __instance, int tile_x, int tile_y, string property_name, string layer_name, ref string property_value, ref bool __result)
             {
-                if (__instance.buildingType.Value == PremiumBarn && __instance.daysOfConstructionLeft.Value <= 0)
+                if (HasSecondDoor(__instance) && __instance.daysOfConstructionLeft.Value <= 0)
                 {
                     var interior = __instance.GetIndoors();
                     if (tile_x == __instance.tileX.Value + __instance.humanDoor.X + 8 &&
@@ -192,7 +150,7 @@ namespace PremiumCoopAndBarn
                 if (who.ActiveObject != null && who.ActiveObject.IsFloorPathItem() && who.currentLocation != null && !who.currentLocation.terrainFeatures.ContainsKey(tileLocation))
                     return;
 
-                if (__instance.buildingType.Value == PremiumBarn && __instance.daysOfConstructionLeft.Value <= 0)
+                if (HasSecondDoor(__instance) && __instance.daysOfConstructionLeft.Value <= 0)
                 {
                     var interior = __instance.GetIndoors();
                     if (tileLocation.X == __instance.tileX.Value + __instance.humanDoor.X + 8 &&
@@ -230,7 +188,7 @@ namespace PremiumCoopAndBarn
         {
             public static void Postfix(Building __instance, GameLocation interior)
             {
-                if (__instance.buildingType.Value != PremiumBarn)
+                if (!HasSecondDoor(__instance))
                     return;
                 if (interior == null || interior.warps.Count < 2)
                     return;

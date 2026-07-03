@@ -324,7 +324,7 @@
                             "Id": "Default_AutoPetter",
                             "ItemId": "(BC)272",
                             "Tile": {
-                                "X": 9,
+                                "X": 10,
                                 "Y": 12
                             },
                             "Indestructible": false
@@ -666,7 +666,7 @@
                             "Id": "Default_AutoPetter",
                             "ItemId": "(BC)272",
                             "Tile": {
-                                "X": 9,
+                                "X": 10,
                                 "Y": 12
                             },
                             "Indestructible": false
