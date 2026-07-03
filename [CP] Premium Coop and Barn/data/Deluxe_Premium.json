@@ -13,7 +13,7 @@
                     "Texture": "Buildings\\Deluxe Barn",
                     "Builder": "Robin",
                     "Size": {
-                        "X": 11,
+                        "X": 7,
                         "Y": 4
                     },
                     "SourceRect": {
@@ -179,8 +179,8 @@
                     "Texture": "Buildings\\Deluxe Coop",
                     "Builder": "Robin",
                     "Size": {
-                        "X": 9,
-                        "Y": 4
+                        "X": 6,
+                        "Y": 3
                     },
                     "FadeWhenBehind": true,
                     "SourceRect": {
@@ -355,7 +355,7 @@
                     "Texture": "Buildings\\Deluxe Barn",
                     "Builder": "Robin",
                     "Size": {
-                        "X": 11,
+                        "X": 7,
                         "Y": 4
                     },
                     "SourceRect": {
@@ -521,8 +521,8 @@
                     "Texture": "Buildings\\Deluxe Coop",
                     "Builder": "Robin",
                     "Size": {
-                        "X": 9,
-                        "Y": 4
+                        "X": 6,
+                        "Y": 3
                     },
                     "FadeWhenBehind": true,
                     "SourceRect": {
