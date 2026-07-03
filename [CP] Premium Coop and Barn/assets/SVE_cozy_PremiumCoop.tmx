@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="14" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="42">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="14" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="42">
  <properties>
   <property name="AmbientLight" value="110 110 110"/>
   <property name="AutoFeed" value="T"/>
@@ -38,7 +38,7 @@
  </tileset>
  <layer id="1" name="Back" width="30" height="14">
   <data encoding="base64" compression="zlib">
-   eJztkkEKgDAMBPuBqlhR8egjLF59WZ9uBANhibVWEQ8G5tBszNK1xvz1Vi3EJBhvMhsTeBftDke+FpjgW+RMw32pvp4YdrjHZw9n1LVzim9BlECV0Zc7MR8untvuUhMOaDL6Mruj3J3wftJXemq58/zm3RId0Gf0/f4PMHPN18GcllGqVoidXPjGMKez9+IjOnrGfK/mZyO6pn2pVgduG6s=
+   eJztkksKgDAMRHsBP1hRcekhLG49mUc3QgPD0GqpIi4MvEUTzcOxxvz1Vq3CDEw3WYzZdJfs3mLegpjpXeZqxvtSvU4YPdrTs6Mzz0PnFG8pVESd0cednA97j29pBEu0GX3cGcu9hvmTXnSGcreQTSf0xJDRd/4fcObstYFnQhmlzkrYq8V3DDNS99l9cSdzdqZ61R37b1f3gJ3o/ULt/98bZA==
   </data>
  </layer>
  <layer id="3" name="Buildings" width="30" height="14">
