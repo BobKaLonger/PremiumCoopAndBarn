@@ -80,6 +80,38 @@
 			}
 		},
 		{
+			"Action": "Load",
+			"Target": "Maps/BOTI_Clean_PremiumBarn",
+			"FromFile": "assets/BOTI_clean_PremiumBarn.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/BOTI_Clean_PremiumCoop",
+			"FromFile": "assets/BOTI_clean_PremiumCoop.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/BOTI_Cozy_PremiumBarn",
+			"FromFile": "assets/BOTI_cozy_PremiumBarn.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/BOTI_Cozy_PremiumCoop",
+			"FromFile": "assets/BOTI_cozy_PremiumCoop.tmx",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
 			"Action": "EditData",
 			"Target": "Data/PaintData",
 			"Entries": {
@@ -101,7 +133,14 @@
 		},
 		{
 			"Action": "Include",
-			"FromFile": "data/indoorClassic.json",
+			"FromFile": "data/SVE_Premium.json",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/BOTI_Premium.json",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
