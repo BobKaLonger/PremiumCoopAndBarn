@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using System.Reflection;
 using StardewValley.Buildings;
 using StardewValley.Objects;
 using StardewValley.GameData.Buildings;
-using System.Reflection;
 
 namespace PremiumCoopAndBarn
 {
@@ -114,106 +114,6 @@ namespace PremiumCoopAndBarn
                 }
                 return true;
             });
-
-            Utility.ForEachBuilding(building =>
-            {
-                if (building.buildingType.Value is not (PremiumBarn or PremiumCoop or DeluxePlusBarn or DeluxePlusCoop))
-                    return true;
-
-                var interior = building.GetIndoors();
-
-                if (building.daysUntilUpgrade.Value > 0 || interior == null)
-                    return true;
-
-                string upgradeKey = $"{ModManifest.UniqueID}/buildingKey";
-                string currentLevel = building.buildingType.Value;
-                building.modData.TryGetValue(upgradeKey, out string lastMovedLevel);
-
-                if (lastMovedLevel != currentLevel)
-                {
-                    if (building.buildingType.Value is PremiumBarn or DeluxePlusBarn)
-                        BarnItemMoves(interior);
-                    else if (building.buildingType.Value is PremiumCoop or DeluxePlusCoop)
-                        CoopItemMoves(interior);
-
-                    building.modData[upgradeKey] = currentLevel;
-                }
-                return true;
-            });
-        }
-
-        private static List<(Vector2 tile, StardewValley.Object obj)> SpiralSearch(GameLocation location, string qualifiedID, Vector2 center, int maxRadius)
-        {
-            var results = new List<(Vector2, StardewValley.Object)>();
-
-            for (int radius = 0; radius <= maxRadius; radius++)
-            {
-                for (int dx = -radius; dx <= radius; dx++)
-                {
-                    for (int dy = -radius; dy <= radius; dy++)
-                    {
-                        if (Math.Abs(dx) != radius && Math.Abs(dy) != radius)
-                            continue;
-
-                        Vector2 tile = new Vector2(center.X + dx, center.Y + dy);
-                        if (location.objects.TryGetValue(tile, out StardewValley.Object obj) && obj.QualifiedItemId == qualifiedID)
-                        {
-                            results.Add((tile, obj));
-                        }
-                    }
-                }
-            }
-
-            return results;
-        }
-
-        private static Vector2 LandingPadRect(GameLocation location, Rectangle landingPad)
-        {
-            for (int y = landingPad.Top; y < landingPad.Bottom; y++)
-            {
-                for (int x = landingPad.Left; x < landingPad.Right; x++)
-                {
-                    Vector2 candidate = new Vector2(x, y);
-                    if (!location.IsTileBlockedBy(candidate, CollisionMask.Objects | CollisionMask.Furniture))
-                    {
-                        return candidate;
-                    }
-                }
-            }
-            return Vector2.Zero;
-        }
-
-        private static void BarnItemMoves(GameLocation interior)
-        {
-            if (interior.map == null) return;
-
-            var namedDestinations = new Dictionary<string, Vector2>
-            {
-                { "(BC)99",  new Vector2( 4,  3) },
-                { "(BC)104", new Vector2(23,  3) },
-                { "(BC)165", new Vector2(10, 16) },
-                { "(BC)272", new Vector2(17, 16) }
-            };
-
-            //var spawnIfMissing = new HashSet<string> { "(BC)104", "(BC)165", "(BC)272" };
-            //   **is it possible to gate this for only Premium buildings and exclude the spawn in DeluxePlus buildings???
-
-            //var haySlots = new List<Rectangle>
-            //   **this doesn't need to be a list anymore, it's just a single rectangle...
-        }
-
-        private static void CoopItemMoves(GameLocation interior)
-        {
-            if (interior.map == null) return;
-
-            var namedDestinations = new Dictionary<string, Vector2>
-            {
-                { "(BC)99",  new Vector2(22,  3) },
-                { "(BC)101", new Vector2( 3,  3) },
-                { "(BC)104", new Vector2(23,  3) },
-                { "(BC)165", new Vector2(10, 12) },
-                { "(BC)272", new Vector2(15, 12) }
-            };
         }
 
         [HarmonyPatch(typeof(Building), nameof(Building.doesTileHaveProperty))]

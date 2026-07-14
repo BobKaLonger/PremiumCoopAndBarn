@@ -143,14 +143,31 @@
                             }
                         }
                     ],
-                    "IndoorMap": "Deluxe_Clean_PremiumBarn",
+                    "IndoorMap": "Clean_DeluxePlusBarn",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
                         "Barn"
                     ],
                     "AllowAnimalPregnancy": true,
-                    "IndoorItems": []
+                    "IndoorItems": [],
+                    "IndoorItemMoves": [
+                        {
+                            "Id": "Default_FeedHopper",
+                            "Source": {
+                                "X": 6,
+                                "Y": 3
+                            },
+                            "Destination": {
+                                "X": 4,
+                                "Y": 3
+                            },
+                            "Size": {
+                                "X": 1,
+                                "Y": 1
+                            }
+                        }
+                    ]
                 }
             }
         },
@@ -255,7 +272,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "Deluxe_Clean_PremiumCoop",
+                    "IndoorMap": "Clean_DeluxePlusCoop",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
@@ -408,14 +425,31 @@
                             }
                         }
                     ],
-                    "IndoorMap": "Deluxe_Cozy_PremiumBarn",
+                    "IndoorMap": "Cozy_DeluxePlusBarn",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [
                         "Barn"
                     ],
                     "AllowAnimalPregnancy": true,
-                    "IndoorItems": []
+                    "IndoorItems": [],
+                    "IndoorItemMoves": [
+                        {
+                            "Id": "Default_FeedHopper",
+                            "Source": {
+                                "X": 6,
+                                "Y": 3
+                            },
+                            "Destination": {
+                                "X": 4,
+                                "Y": 3
+                            },
+                            "Size": {
+                                "X": 1,
+                                "Y": 1
+                            }
+                        }
+                    ]
                 }
             }
         },
@@ -520,7 +554,7 @@
                             }
                         }
                     ],
-                    "IndoorMap": "Deluxe_Cozy_PremiumCoop",
+                    "IndoorMap": "Cozy_DeluxePlusCoop",
                     "IndoorMapType": "StardewValley.AnimalHouse",
                     "MaxOccupants": 16,
                     "ValidOccupantTypes": [

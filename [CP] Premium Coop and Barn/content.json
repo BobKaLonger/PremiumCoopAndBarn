@@ -55,64 +55,64 @@
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/SVE_Clean_PremiumBarn",
-			"FromFile": "assets/SVE_clean_PremiumBarn.tmx",
+			"Target": "Maps/Clean_PremiumBarn",
+			"FromFile": "assets/clean_PremiumBarn.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/SVE_Clean_PremiumCoop",
-			"FromFile": "assets/SVE_clean_PremiumCoop.tmx",
+			"Target": "Maps/Clean_PremiumCoop",
+			"FromFile": "assets/clean_PremiumCoop.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/SVE_Cozy_PremiumBarn",
-			"FromFile": "assets/SVE_cozy_PremiumBarn.tmx",
+			"Target": "Maps/Cozy_PremiumBarn",
+			"FromFile": "assets/cozy_PremiumBarn.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/SVE_Cozy_PremiumCoop",
-			"FromFile": "assets/SVE_cozy_PremiumCoop.tmx",
+			"Target": "Maps/Cozy_PremiumCoop",
+			"FromFile": "assets/cozy_PremiumCoop.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Deluxe_Clean_PremiumBarn",
-			"FromFile": "assets/Deluxe_clean_PremiumBarn.tmx",
+			"Target": "Maps/Clean_DeluxePlusBarn",
+			"FromFile": "assets/clean_DeluxePlusBarn.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Deluxe_Clean_PremiumCoop",
-			"FromFile": "assets/Deluxe_clean_PremiumCoop.tmx",
+			"Target": "Maps/Clean_DeluxePlusCoop",
+			"FromFile": "assets/clean_DeluxePlusCoop.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Deluxe_Cozy_PremiumBarn",
-			"FromFile": "assets/Deluxe_cozy_PremiumBarn.tmx",
+			"Target": "Maps/Cozy_DeluxePlusBarn",
+			"FromFile": "assets/cozy_DeluxePlusBarn.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Load",
-			"Target": "Maps/Deluxe_Cozy_PremiumCoop",
-			"FromFile": "assets/Deluxe_cozy_PremiumCoop.tmx",
+			"Target": "Maps/Cozy_DeluxePlusCoop",
+			"FromFile": "assets/cozy_DeluxePlusCoop.tmx",
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
