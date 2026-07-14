@@ -12,6 +12,12 @@
 			"Description": "Choose the interior for your coop.",
 			"Default": "Clean",
 			"Section": "Indoor Appearance"
+		},
+		"Building Type": {
+			"AllowValues": "Deluxe, Premium",
+			"Description": "Deluxe will upgrade from Deluxe, Premium is a new building construction (like SVE).",
+			"Default": "Premium",
+			"Section": "Exterior Appearance"
 		}
 	},
 	"Changes": [
@@ -132,17 +138,39 @@
 			}
 		},
 		{
-			"Action": "Include",
-			"FromFile": "data/SVE_Premium.json",
+			"Action": "EditData",
+			"Target": "Data/PaintData",
+			"Entries": {
+				"{{ModId}}_DeluxePlusBarn": "Building/-15 0/Roof/-10 5/Trim/-10 5"
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/PaintData",
+			"Entries": {
+				"{{ModId}}_DeluxePlusCoop": "Building/-25 0/Roof/-15 5/Trim/-25 0"
+			},
 			"When": {
 				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
 			}
 		},
 		{
 			"Action": "Include",
-			"FromFile": "data/Deluxe_Premium.json",
+			"FromFile": "data/Premium.json",
 			"When": {
-				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false",
+				"Building Type": "Premium"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/DeluxePlus.json",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false",
+				"Building Type": "Deluxe"
 			}
 		}
 	]

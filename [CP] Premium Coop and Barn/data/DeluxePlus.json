@@ -7,9 +7,9 @@
                 "Barn Floor": "Clean"
             },
             "Entries": {
-                "{{ModId}}_PremiumBarn": {
-                    "Name": "{{i18n:building.premium-barn.name}}",
-                    "Description": "{{i18n:building.premium-barn.description}}",
+                "{{ModId}}_DeluxePlusBarn": {
+                    "Name": "{{i18n:building.deluxe-plus-barn.name}}",
+                    "Description": "{{i18n:building.deluxe-plus-barn.description}}",
                     "Texture": "Buildings\\Deluxe Barn",
                     "Builder": "Robin",
                     "Size": {
@@ -23,7 +23,7 @@
                         "Height": 112
                     },
                     "FadeWhenBehind": true,
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\"",
+                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusBarn\"",
                     "BuildDays": 2,
                     "BuildCost": 37500,
                     "BuildMaterials": [
@@ -161,9 +161,9 @@
                 "Coop Floor": "Clean"
             },
             "Entries": {
-                "{{ModId}}_PremiumCoop": {
-                    "Name": "{{i18n:building.premium-coop.name}}",
-                    "Description": "{{i18n:building.premium-coop.description}}",
+                "{{ModId}}_DeluxePlusCoop": {
+                    "Name": "{{i18n:building.deluxe-plus-coop.name}}",
+                    "Description": "{{i18n:building.deluxe-plus-coop.description}}",
                     "Texture": "Buildings\\Deluxe Coop",
                     "Builder": "Robin",
                     "Size": {
@@ -177,7 +177,7 @@
                         "Width": 96,
                         "Height": 112
                     },
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\"",
+                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusCoop\"",
                     "BuildDays": 2,
                     "BuildCost": 30000,
                     "BuildMaterials": [
@@ -272,9 +272,9 @@
                 "Barn Floor": "Cozy"
             },
             "Entries": {
-                "{{ModId}}_PremiumBarn": {
-                    "Name": "{{i18n:building.premium-barn.name}}",
-                    "Description": "{{i18n:building.premium-barn.description}}",
+                "{{ModId}}_DeluxePlusBarn": {
+                    "Name": "{{i18n:building.deluxe-plus-barn.name}}",
+                    "Description": "{{i18n:building.deluxe-plus-barn.description}}",
                     "Texture": "Buildings\\Deluxe Barn",
                     "Builder": "Robin",
                     "Size": {
@@ -288,7 +288,7 @@
                         "Height": 112
                     },
                     "FadeWhenBehind": true,
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\"",
+                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusBarn\"",
                     "BuildDays": 2,
                     "BuildCost": 37500,
                     "BuildMaterials": [
@@ -426,9 +426,9 @@
                 "Coop Floor": "Cozy"
             },
             "Entries": {
-                "{{ModId}}_PremiumCoop": {
-                    "Name": "{{i18n:building.premium-coop.name}}",
-                    "Description": "{{i18n:building.premium-coop.description}}",
+                "{{ModId}}_DeluxePlusCoop": {
+                    "Name": "{{i18n:building.deluxe-plus-coop.name}}",
+                    "Description": "{{i18n:building.deluxe-plus-coop.description}}",
                     "Texture": "Buildings\\Deluxe Coop",
                     "Builder": "Robin",
                     "Size": {
@@ -442,7 +442,7 @@
                         "Width": 96,
                         "Height": 112
                     },
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\"",
+                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusCoop\"",
                     "BuildDays": 2,
                     "BuildCost": 30000,
                     "BuildMaterials": [
