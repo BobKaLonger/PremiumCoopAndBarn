@@ -23,7 +23,8 @@
                         "Height": 112
                     },
                     "FadeWhenBehind": true,
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusBarn\"",
+                    "BuildCondition": null,
+                    "BuildingToUpgrade": "Deluxe Barn",
                     "BuildDays": 2,
                     "BuildCost": 37500,
                     "BuildMaterials": [
@@ -194,7 +195,8 @@
                         "Width": 96,
                         "Height": 112
                     },
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusCoop\"",
+                    "BuildCondition": null,
+                    "BuildingToUpgrade": "Deluxe Coop",
                     "BuildDays": 2,
                     "BuildCost": 30000,
                     "BuildMaterials": [
@@ -305,7 +307,8 @@
                         "Height": 112
                     },
                     "FadeWhenBehind": true,
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Barn\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumBarn\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusBarn\"",
+                    "BuildCondition": null,
+                    "BuildingToUpgrade": "Deluxe Barn",
                     "BuildDays": 2,
                     "BuildCost": 37500,
                     "BuildMaterials": [
@@ -476,7 +479,8 @@
                         "Width": 96,
                         "Height": 112
                     },
-                    "BuildCondition": "ANY \"BUILDINGS_CONSTRUCTED All \\\"Deluxe Coop\\\"\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_PremiumCoop\" \"BUILDINGS_CONSTRUCTED All bobkalonger.PremiumCoopAndBarnCP_DeluxePlusCoop\"",
+                    "BuildCondition": null,
+                    "BuildingToUpgrade": "Deluxe Coop",
                     "BuildDays": 2,
                     "BuildCost": 30000,
                     "BuildMaterials": [
